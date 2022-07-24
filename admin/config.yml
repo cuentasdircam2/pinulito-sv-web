@@ -12,6 +12,7 @@ collections:
     fields:
       - {label: "Imagen", name: "imagen", widget: "image", allow_multiple: true, choose_url: false}
       - {label: "Nombre", name: "title", widget: "string"}
+      - {label: "Descripción", name: "menu-item-desc", widget: "text"}
       - {label: "Precio (sin $)", name: "menu-item-precio", widget: "string"}
       - {label: "¿Es extra?", name: "menu-item-is-extra", widget: "boolean", default: false}
       - label: "Partes del combo"
