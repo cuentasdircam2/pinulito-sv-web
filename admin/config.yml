@@ -3,6 +3,23 @@ backend:
   branch: main # Branch to update (optional; defaults to master)
 media_folder: "assets/img/uploads" # Media files will be stored in the repo under images/uploads
 collections:
+  - name: "menu"
+    label: "Menu"
+    folder: "_data/menu"
+    create: true
+    extension: "json"
+    slug: "{{year}}-{{month}}-{{day}}_{{title}}"
+    fields:
+      - {label: "Imagen", name: "imagen", widget: "image", allow_multiple: true, choose_url: false}
+      - {label: "Nombre", name: "title", widget: "string"}
+      - {label: "Precio", name: "menu-item-precio", widget: "string"}
+      - {label: "¿Es extra?", name: "menu-item-is-extra", widget: "boolean", default: false}
+      - label: "Partes del combo"
+        name: "menu-item-parts"
+        widget: "list"
+        allow_add: true
+        field:
+          - {label: "Nombre", name: "menu-item-part-name", widget: "string"}
   - name: "sucursales-san-salvador"
     label: "Sucursales de San Salvador"
     folder: "_data/sucursales/san-salvador"
