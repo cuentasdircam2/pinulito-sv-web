@@ -1,0 +1,17 @@
+{
+  "menu-item-is-extra": false,
+  "menu-item-parts": [
+    {
+      "menu-item-part-name": "5 piezas"
+    },
+    {
+      "menu-item-part-name": "3 alas"
+    },
+    {
+      "menu-item-part-name": "Pan"
+    }
+  ],
+  "menu-item-precio": "3.75",
+  "title": "Combo 3",
+  "imagen": "/assets/img/uploads/pollo_placeholder.png"
+}
