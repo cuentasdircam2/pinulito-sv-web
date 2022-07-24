@@ -12,7 +12,7 @@ collections:
     fields:
       - {label: "Imagen", name: "imagen", widget: "image", allow_multiple: true, choose_url: false}
       - {label: "Nombre", name: "title", widget: "string"}
-      - {label: "Precio", name: "menu-item-precio", widget: "string"}
+      - {label: "Precio (sin $)", name: "menu-item-precio", widget: "string"}
       - {label: "¿Es extra?", name: "menu-item-is-extra", widget: "boolean", default: false}
       - label: "Partes del combo"
         name: "menu-item-parts"
@@ -20,9 +20,1855 @@ collections:
         allow_add: true
         fields:
           - {label: "Nombre", name: "menu-item-part-name", widget: "string"}
+  - name: "sucursales-ahuachapan"
+    label: "Sucursales en Ahuachapán"
+    folder: "_data/sucursales/ahuachapan"
+    create: true
+    extension: "json"
+    slug: "{{year}}-{{month}}-{{day}}_{{title}}"
+    fields:
+      - {label: "Nombre de la sucursal", name: "title", widget: "string"}
+      - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
+      - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
+      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
+      - label: "Servicios de domicilio"
+        name: "domicilio-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
+          - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
+          - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Horarios de apertura"
+        name: "horario-apertura-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (apertura)"
+            name: "horario-apertura-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (apertura)"
+            name: "horario-apertura-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (apertura)"
+            name: "horario-apertura-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (apertura)"
+            name: "horario-apertura-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (apertura)"
+            name: "horario-apertura-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (apertura)"
+            name: "horario-apertura-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (apertura)"
+            name: "horario-apertura-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+      - label: "Horarios de cierre"
+        name: "horario-cierre-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (cierre)"
+            name: "horario-cierre-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (cierre)"
+            name: "horario-cierre-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (cierre)"
+            name: "horario-cierre-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (cierre)"
+            name: "horario-cierre-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (cierre)"
+            name: "horario-cierre-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (cierre)"
+            name: "horario-cierre-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (cierre)"
+            name: "horario-cierre-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+  - name: "sucursales-cabanas"
+    label: "Sucursales en Cabañas"
+    folder: "_data/sucursales/cabanas"
+    create: true
+    extension: "json"
+    slug: "{{year}}-{{month}}-{{day}}_{{title}}"
+    fields:
+      - {label: "Nombre de la sucursal", name: "title", widget: "string"}
+      - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
+      - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
+      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
+      - label: "Servicios de domicilio"
+        name: "domicilio-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
+          - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
+          - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Horarios de apertura"
+        name: "horario-apertura-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (apertura)"
+            name: "horario-apertura-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (apertura)"
+            name: "horario-apertura-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (apertura)"
+            name: "horario-apertura-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (apertura)"
+            name: "horario-apertura-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (apertura)"
+            name: "horario-apertura-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (apertura)"
+            name: "horario-apertura-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (apertura)"
+            name: "horario-apertura-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+      - label: "Horarios de cierre"
+        name: "horario-cierre-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (cierre)"
+            name: "horario-cierre-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (cierre)"
+            name: "horario-cierre-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (cierre)"
+            name: "horario-cierre-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (cierre)"
+            name: "horario-cierre-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (cierre)"
+            name: "horario-cierre-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (cierre)"
+            name: "horario-cierre-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (cierre)"
+            name: "horario-cierre-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+  - name: "sucursales-chalatenango"
+    label: "Sucursales en Chalatenango"
+    folder: "_data/sucursales/chalatenango"
+    create: true
+    extension: "json"
+    slug: "{{year}}-{{month}}-{{day}}_{{title}}"
+    fields:
+      - {label: "Nombre de la sucursal", name: "title", widget: "string"}
+      - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
+      - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
+      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
+      - label: "Servicios de domicilio"
+        name: "domicilio-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
+          - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
+          - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Horarios de apertura"
+        name: "horario-apertura-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (apertura)"
+            name: "horario-apertura-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (apertura)"
+            name: "horario-apertura-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (apertura)"
+            name: "horario-apertura-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (apertura)"
+            name: "horario-apertura-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (apertura)"
+            name: "horario-apertura-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (apertura)"
+            name: "horario-apertura-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (apertura)"
+            name: "horario-apertura-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+      - label: "Horarios de cierre"
+        name: "horario-cierre-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (cierre)"
+            name: "horario-cierre-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (cierre)"
+            name: "horario-cierre-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (cierre)"
+            name: "horario-cierre-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (cierre)"
+            name: "horario-cierre-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (cierre)"
+            name: "horario-cierre-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (cierre)"
+            name: "horario-cierre-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (cierre)"
+            name: "horario-cierre-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+  - name: "sucursales-cuscatlan"
+    label: "Sucursales en Cuscatlán"
+    folder: "_data/sucursales/cuscatlan"
+    create: true
+    extension: "json"
+    slug: "{{year}}-{{month}}-{{day}}_{{title}}"
+    fields:
+      - {label: "Nombre de la sucursal", name: "title", widget: "string"}
+      - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
+      - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
+      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
+      - label: "Servicios de domicilio"
+        name: "domicilio-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
+          - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
+          - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Horarios de apertura"
+        name: "horario-apertura-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (apertura)"
+            name: "horario-apertura-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (apertura)"
+            name: "horario-apertura-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (apertura)"
+            name: "horario-apertura-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (apertura)"
+            name: "horario-apertura-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (apertura)"
+            name: "horario-apertura-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (apertura)"
+            name: "horario-apertura-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (apertura)"
+            name: "horario-apertura-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+      - label: "Horarios de cierre"
+        name: "horario-cierre-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (cierre)"
+            name: "horario-cierre-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (cierre)"
+            name: "horario-cierre-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (cierre)"
+            name: "horario-cierre-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (cierre)"
+            name: "horario-cierre-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (cierre)"
+            name: "horario-cierre-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (cierre)"
+            name: "horario-cierre-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (cierre)"
+            name: "horario-cierre-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+  - name: "sucursales-la-libertad"
+    label: "Sucursales en La Libertad"
+    folder: "_data/sucursales/la-libertad"
+    create: true
+    extension: "json"
+    slug: "{{year}}-{{month}}-{{day}}_{{title}}"
+    fields:
+      - {label: "Nombre de la sucursal", name: "title", widget: "string"}
+      - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
+      - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
+      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
+      - label: "Servicios de domicilio"
+        name: "domicilio-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
+          - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
+          - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Horarios de apertura"
+        name: "horario-apertura-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (apertura)"
+            name: "horario-apertura-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (apertura)"
+            name: "horario-apertura-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (apertura)"
+            name: "horario-apertura-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (apertura)"
+            name: "horario-apertura-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (apertura)"
+            name: "horario-apertura-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (apertura)"
+            name: "horario-apertura-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (apertura)"
+            name: "horario-apertura-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+      - label: "Horarios de cierre"
+        name: "horario-cierre-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (cierre)"
+            name: "horario-cierre-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (cierre)"
+            name: "horario-cierre-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (cierre)"
+            name: "horario-cierre-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (cierre)"
+            name: "horario-cierre-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (cierre)"
+            name: "horario-cierre-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (cierre)"
+            name: "horario-cierre-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (cierre)"
+            name: "horario-cierre-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+  - name: "sucursales-la-paz"
+    label: "Sucursales en La Paz"
+    folder: "_data/sucursales/la-paz"
+    create: true
+    extension: "json"
+    slug: "{{year}}-{{month}}-{{day}}_{{title}}"
+    fields:
+      - {label: "Nombre de la sucursal", name: "title", widget: "string"}
+      - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
+      - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
+      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
+      - label: "Servicios de domicilio"
+        name: "domicilio-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
+          - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
+          - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Horarios de apertura"
+        name: "horario-apertura-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (apertura)"
+            name: "horario-apertura-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (apertura)"
+            name: "horario-apertura-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (apertura)"
+            name: "horario-apertura-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (apertura)"
+            name: "horario-apertura-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (apertura)"
+            name: "horario-apertura-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (apertura)"
+            name: "horario-apertura-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (apertura)"
+            name: "horario-apertura-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+      - label: "Horarios de cierre"
+        name: "horario-cierre-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (cierre)"
+            name: "horario-cierre-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (cierre)"
+            name: "horario-cierre-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (cierre)"
+            name: "horario-cierre-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (cierre)"
+            name: "horario-cierre-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (cierre)"
+            name: "horario-cierre-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (cierre)"
+            name: "horario-cierre-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (cierre)"
+            name: "horario-cierre-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+  - name: "sucursales-la-union"
+    label: "Sucursales en La Unión"
+    folder: "_data/sucursales/la-union"
+    create: true
+    extension: "json"
+    slug: "{{year}}-{{month}}-{{day}}_{{title}}"
+    fields:
+      - {label: "Nombre de la sucursal", name: "title", widget: "string"}
+      - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
+      - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
+      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
+      - label: "Servicios de domicilio"
+        name: "domicilio-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
+          - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
+          - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Horarios de apertura"
+        name: "horario-apertura-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (apertura)"
+            name: "horario-apertura-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (apertura)"
+            name: "horario-apertura-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (apertura)"
+            name: "horario-apertura-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (apertura)"
+            name: "horario-apertura-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (apertura)"
+            name: "horario-apertura-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (apertura)"
+            name: "horario-apertura-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (apertura)"
+            name: "horario-apertura-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+      - label: "Horarios de cierre"
+        name: "horario-cierre-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (cierre)"
+            name: "horario-cierre-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (cierre)"
+            name: "horario-cierre-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (cierre)"
+            name: "horario-cierre-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (cierre)"
+            name: "horario-cierre-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (cierre)"
+            name: "horario-cierre-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (cierre)"
+            name: "horario-cierre-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (cierre)"
+            name: "horario-cierre-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+  - name: "sucursales-morazan"
+    label: "Sucursales en Morazán"
+    folder: "_data/sucursales/morazan"
+    create: true
+    extension: "json"
+    slug: "{{year}}-{{month}}-{{day}}_{{title}}"
+    fields:
+      - {label: "Nombre de la sucursal", name: "title", widget: "string"}
+      - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
+      - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
+      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
+      - label: "Servicios de domicilio"
+        name: "domicilio-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
+          - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
+          - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Horarios de apertura"
+        name: "horario-apertura-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (apertura)"
+            name: "horario-apertura-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (apertura)"
+            name: "horario-apertura-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (apertura)"
+            name: "horario-apertura-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (apertura)"
+            name: "horario-apertura-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (apertura)"
+            name: "horario-apertura-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (apertura)"
+            name: "horario-apertura-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (apertura)"
+            name: "horario-apertura-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+      - label: "Horarios de cierre"
+        name: "horario-cierre-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (cierre)"
+            name: "horario-cierre-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (cierre)"
+            name: "horario-cierre-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (cierre)"
+            name: "horario-cierre-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (cierre)"
+            name: "horario-cierre-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (cierre)"
+            name: "horario-cierre-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (cierre)"
+            name: "horario-cierre-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (cierre)"
+            name: "horario-cierre-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+  - name: "sucursales-san-miguel"
+    label: "Sucursales en San Miguel"
+    folder: "_data/sucursales/san-miguel"
+    create: true
+    extension: "json"
+    slug: "{{year}}-{{month}}-{{day}}_{{title}}"
+    fields:
+      - {label: "Nombre de la sucursal", name: "title", widget: "string"}
+      - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
+      - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
+      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
+      - label: "Servicios de domicilio"
+        name: "domicilio-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
+          - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
+          - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Horarios de apertura"
+        name: "horario-apertura-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (apertura)"
+            name: "horario-apertura-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (apertura)"
+            name: "horario-apertura-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (apertura)"
+            name: "horario-apertura-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (apertura)"
+            name: "horario-apertura-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (apertura)"
+            name: "horario-apertura-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (apertura)"
+            name: "horario-apertura-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (apertura)"
+            name: "horario-apertura-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+      - label: "Horarios de cierre"
+        name: "horario-cierre-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (cierre)"
+            name: "horario-cierre-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (cierre)"
+            name: "horario-cierre-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (cierre)"
+            name: "horario-cierre-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (cierre)"
+            name: "horario-cierre-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (cierre)"
+            name: "horario-cierre-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (cierre)"
+            name: "horario-cierre-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (cierre)"
+            name: "horario-cierre-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
   - name: "sucursales-san-salvador"
-    label: "Sucursales de San Salvador"
+    label: "Sucursales en San Salvador"
     folder: "_data/sucursales/san-salvador"
+    create: true
+    extension: "json"
+    slug: "{{year}}-{{month}}-{{day}}_{{title}}"
+    fields:
+      - {label: "Nombre de la sucursal", name: "title", widget: "string"}
+      - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
+      - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
+      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
+      - label: "Servicios de domicilio"
+        name: "domicilio-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
+          - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
+          - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Horarios de apertura"
+        name: "horario-apertura-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (apertura)"
+            name: "horario-apertura-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (apertura)"
+            name: "horario-apertura-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (apertura)"
+            name: "horario-apertura-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (apertura)"
+            name: "horario-apertura-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (apertura)"
+            name: "horario-apertura-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (apertura)"
+            name: "horario-apertura-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (apertura)"
+            name: "horario-apertura-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+      - label: "Horarios de cierre"
+        name: "horario-cierre-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (cierre)"
+            name: "horario-cierre-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (cierre)"
+            name: "horario-cierre-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (cierre)"
+            name: "horario-cierre-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (cierre)"
+            name: "horario-cierre-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (cierre)"
+            name: "horario-cierre-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (cierre)"
+            name: "horario-cierre-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (cierre)"
+            name: "horario-cierre-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+  - name: "sucursales-san-vicente"
+    label: "Sucursales en San Vicente"
+    folder: "_data/sucursales/san-vicente"
+    create: true
+    extension: "json"
+    slug: "{{year}}-{{month}}-{{day}}_{{title}}"
+    fields:
+      - {label: "Nombre de la sucursal", name: "title", widget: "string"}
+      - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
+      - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
+      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
+      - label: "Servicios de domicilio"
+        name: "domicilio-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
+          - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
+          - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Horarios de apertura"
+        name: "horario-apertura-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (apertura)"
+            name: "horario-apertura-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (apertura)"
+            name: "horario-apertura-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (apertura)"
+            name: "horario-apertura-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (apertura)"
+            name: "horario-apertura-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (apertura)"
+            name: "horario-apertura-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (apertura)"
+            name: "horario-apertura-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (apertura)"
+            name: "horario-apertura-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+      - label: "Horarios de cierre"
+        name: "horario-cierre-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (cierre)"
+            name: "horario-cierre-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (cierre)"
+            name: "horario-cierre-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (cierre)"
+            name: "horario-cierre-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (cierre)"
+            name: "horario-cierre-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (cierre)"
+            name: "horario-cierre-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (cierre)"
+            name: "horario-cierre-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (cierre)"
+            name: "horario-cierre-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+  - name: "sucursales-santa-ana"
+    label: "Sucursales de Santa Ana"
+    folder: "_data/sucursales/santa-ana"
+    create: true
+    extension: "json"
+    slug: "{{year}}-{{month}}-{{day}}_{{title}}"
+    fields:
+      - {label: "Nombre de la sucursal", name: "title", widget: "string"}
+      - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
+      - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
+      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
+      - label: "Servicios de domicilio"
+        name: "domicilio-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
+          - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
+          - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Horarios de apertura"
+        name: "horario-apertura-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (apertura)"
+            name: "horario-apertura-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (apertura)"
+            name: "horario-apertura-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (apertura)"
+            name: "horario-apertura-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (apertura)"
+            name: "horario-apertura-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (apertura)"
+            name: "horario-apertura-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (apertura)"
+            name: "horario-apertura-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (apertura)"
+            name: "horario-apertura-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+      - label: "Horarios de cierre"
+        name: "horario-cierre-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (cierre)"
+            name: "horario-cierre-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (cierre)"
+            name: "horario-cierre-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (cierre)"
+            name: "horario-cierre-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (cierre)"
+            name: "horario-cierre-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (cierre)"
+            name: "horario-cierre-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (cierre)"
+            name: "horario-cierre-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (cierre)"
+            name: "horario-cierre-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+  - name: "sucursales-sonsonate"
+    label: "Sucursales de Sonsonate"
+    folder: "_data/sucursales/sonsonate"
+    create: true
+    extension: "json"
+    slug: "{{year}}-{{month}}-{{day}}_{{title}}"
+    fields:
+      - {label: "Nombre de la sucursal", name: "title", widget: "string"}
+      - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
+      - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
+      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
+      - label: "Servicios de domicilio"
+        name: "domicilio-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
+          - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
+          - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Horarios de apertura"
+        name: "horario-apertura-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (apertura)"
+            name: "horario-apertura-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (apertura)"
+            name: "horario-apertura-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (apertura)"
+            name: "horario-apertura-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (apertura)"
+            name: "horario-apertura-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (apertura)"
+            name: "horario-apertura-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (apertura)"
+            name: "horario-apertura-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (apertura)"
+            name: "horario-apertura-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-apertura-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-apertura-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-apertura-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+      - label: "Horarios de cierre"
+        name: "horario-cierre-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Lunes (cierre)"
+            name: "horario-cierre-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes (cierre)"
+            name: "horario-cierre-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles (cierre)"
+            name: "horario-cierre-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves (cierre)"
+            name: "horario-cierre-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes (cierre)"
+            name: "horario-cierre-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado (cierre)"
+            name: "horario-cierre-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo (cierre)"
+            name: "horario-cierre-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-cierre-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-cierre-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-cierre-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+  - name: "sucursales-usulutan"
+    label: "Sucursales de Usulutan"
+    folder: "_data/sucursales/usulutan"
     create: true
     extension: "json"
     slug: "{{year}}-{{month}}-{{day}}_{{title}}"
