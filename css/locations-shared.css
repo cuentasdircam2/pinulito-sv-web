@@ -1,0 +1,148 @@
+#locations-outer-container {
+    padding: 6rem 14%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../assets/img/sucursales_bg.png);
+    background-position: center;
+    background-size: cover;
+}
+#locations-outer-container h2 {
+    color: white;
+    text-shadow: 0 0 30px rgba(0,0,0,.5);
+}
+
+#locations-actual-container {
+    padding: 3rem 14%;
+    position: relative;
+    font-size: 1.2rem;
+    min-height: 32vh;
+}
+#locations-actual-container ul {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1.2rem;
+}
+
+#locations-actual-container ul li {
+    list-style: none;
+    width: calc((100% - 1rem) / 3);
+    box-sizing: border-box;
+}
+#locations-actual-container ul li:not(:nth-of-type(3n)) {
+    margin-right: 0.5rem;
+}
+#locations-actual-container ul li a {
+    text-decoration: none;
+}
+
+.sucursal-location {
+    text-decoration: underline;
+}
+.sucursal-location:hover {
+    text-decoration: none;
+}
+.sucursales-count {
+    color: rgb(110, 110, 110);
+}
+
+
+#location-container {
+    padding: 3rem 14%;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.location-info-container {
+    display: flex;
+    position: relative;
+    column-gap: 1rem;
+}
+.location-info-addr, .location-info-horario {
+    width: calc((100% - 1rem) / 2);
+    display: flex;
+    flex-direction: column;
+}
+
+.location-info-addr h4, .location-info-horario h4 {
+    text-transform: uppercase;
+    margin-bottom: 1.1rem;
+}
+
+.location-info-addr address {
+    margin-bottom: 1rem;
+}
+
+.horario-table {
+    width: 50%;
+}
+.horario-table tbody tr:nth-last-of-type(2n){
+    background-color: rgb(245, 245, 245);
+}
+
+#location-map-container {
+    padding: 3rem 0;
+    position: relative;
+}
+.map-container {
+    width: 100%;
+    height: calc(100vw * 0.3);
+    display: flex;
+}
+.map-display {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.map-display a {
+    margin-bottom: 2rem;
+}
+
+
+/* RESPONSIVE */
+/* Mobile */
+@media (max-width: 991.98px) {
+
+    #locations-actual-container {
+        padding: 3rem 8% !important;
+    }
+
+    #locations-actual-container ul li {
+        width: calc(100% - 1rem) !important;
+    }
+
+
+    #location-container {
+        padding: 3rem 8% !important;
+    }
+
+    .location-info-container {
+        flex-direction: column;
+        row-gap: 3rem;
+    }
+    .location-info-addr, .location-info-horario {
+        width: 100%;
+    }
+    .horario-table {
+        width: 100%;
+    }
+
+    .map-container {
+        height: calc(100vw * 1.3) !important;
+    }
+
+}
+
+/* Pre desktop */
+@media (max-width: 1199.98px) {
+
+    #locations-actual-container ul li {
+        width: calc((100% - 1rem) / 2);
+    }
+
+}

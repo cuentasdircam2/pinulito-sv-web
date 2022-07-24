@@ -1,0 +1,84 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+media_folder: "assets/img/uploads" # Media files will be stored in the repo under images/uploads
+collections:
+  - name: "sucursales-san-salvador"
+    label: "Sucursales de San Salvador"
+    folder: "_data/sucursales/san-salvador"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Nombre de la sucursal", name: "nombre-sucursal", widget: "string"}
+      - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
+      - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
+      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string"}
+      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string"}
+      - label: "Servicios de domicilio"
+        name: "domicilio-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
+          - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
+          - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Horario"
+        name: "horario-sucursal"
+        widget: "object"
+        fields:
+          - label: "Lunes"
+            name: "horario-lunes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-lunes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-lunes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-lunes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Martes"
+            name: "horario-martes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-martes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-martes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-martes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Miércoles"
+            name: "horario-miercoles-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-miercoles-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-miercoles-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-miercoles-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Jueves"
+            name: "horario-jueves-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-jueves-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-jueves-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-jueves-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Viernes"
+            name: "horario-viernes-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-viernes-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-viernes-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-viernes-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Sábado"
+            name: "horario-sabado-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-sabado-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-sabado-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-sabado-ampm-sucursal", widget: "select", options: ["AM", "PM"]}
+          - label: "Domingo"
+            name: "horario-domingo-sucursal"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Hora", name: "horario-domingo-hora-sucursal", widget: "select", options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+              - {label: "Minutos", name: "horario-domingo-minutos-sucursal", widget: "select", options: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]}
+              - {label: "AM/PM", name: "horario-domingo-ampm-sucursal", widget: "select", options: ["AM", "PM"]}

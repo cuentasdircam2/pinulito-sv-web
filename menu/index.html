@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pollo Pinulito | Menu</title>
+    <link rel="stylesheet" href="../css/site-wide-rules.css">
+    <style>
+
+        /* EVENTOS INFO */
+        .eventos-info-container {
+            padding: 2rem 14%;
+            /* background-color: rgb(19, 212, 148); */
+            border-top: rgb(200, 200, 200) 1px solid;
+            border-bottom: rgb(200, 200, 200) 1px solid;
+        }
+        .eventos-info-parts-container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+        }
+        .eventos-info-parts-container h3 {
+            color: var(--color-red-dark);
+            flex: 1 0 14%;
+            letter-spacing: 0.1rem;
+            font-size: 2rem;
+        }
+
+        .eventos-info-parts-container p {
+            line-height: 1.55;
+        }
+
+        /* MENU Main page*/
+        #menu-container {
+            padding: 2rem 14%;
+            /* background-color: brown; */
+            margin-top: 1rem;
+        }
+
+        .menu-items-container {
+            padding: 2rem 2rem;
+            /* background-color: lawngreen; */
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 1rem;
+        }
+        .menu-items-container li {
+            list-style: none;
+            background-color: white;
+            width: calc((100% - 1rem) / 3);
+            box-sizing: border-box;
+            box-shadow: 0 0 30px rgba(0,0,0,.15);
+        }
+        .menu-items-container li:not(:nth-of-type(3n)) {
+            margin-right: 0.5rem;
+        }
+        .menu-items-container li a {
+            padding: 1rem;
+            width: calc((100% - 2rem));
+            height: calc((100% - 2rem));
+            display: inline-block;
+            text-decoration: none;
+        }
+        .menu-items-container li a:visited {
+            color: initial;
+        }
+
+        .menu-item-container {
+            /* background-color: cadetblue; */
+            display: flex;
+            flex-direction: row;
+        }
+        .menu-item-container .menu-item-container-img {
+            flex: 1 1 35%;
+            /* background-color: khaki; */
+        }
+        .menu-item-container .menu-item-container-info {
+            flex: 1 1 65%;
+            /* background-color: thistle; */
+            padding-left: 1.5rem;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .menu-item-container .menu-item-container-img img {
+            max-width: 100%;
+        }
+
+        .menu-item-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            font-family: var(--standard-font);
+            line-height: 1.25;
+        }
+        .menu-item-cta {
+            text-decoration: underline;
+            text-transform: uppercase;
+            font-family: var(--standard-font);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            width: fit-content;
+        }
+        .menu-item-cta:hover {
+            text-decoration: none;
+        }
+
+
+        /* RESPONSIVE */
+        /* Mobile */
+        @media (max-width: 991.98px) {
+
+            .eventos-info-container {
+                padding: 2rem 1rem !important;
+            }
+            .eventos-info-parts-container {
+                flex-direction: column;
+                row-gap: 2rem;
+            }
+
+            #menu-container {
+                padding: 2rem 1rem !important;
+            }
+            .menu-items-container {
+                padding: 2rem 1rem;
+            }
+            .menu-items-container li {
+                width: calc(100% - 1rem);
+            }
+            .menu-items-container li a {
+                width: calc((100% - 1rem));
+            }
+        }
+
+        /* Pre desktop */
+        @media (max-width: 1199.98px) {
+
+            .eventos-info-container {
+                padding: 2rem 4rem;
+            }
+
+            #menu-container {
+                padding: 2rem 4rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <a id="skip-to-main-content" href="#main-container">Ir al contenido principal</a>
+    
+    <nav>
+        <div id="nav-logo-container">
+            <a href="/">
+                <img src="../assets/img/logo.png" alt="Logo">
+            </a>
+        </div>
+        <ul id="nav-links-container">
+            <li>
+                <a class="nav-selected" href="/menu/">Menu</a>
+            </li>
+            <li>
+                <a href="/sucursales/">Sucursales</a>
+            </li>
+            <li>
+                <a href="/eventos/">Eventos</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="main-container">
+        <h1 class="not-visible">Menu de Pollo Pinulito</h1>
+
+        <div id="menu-container" tabindex="-1">
+            <div class="section-bullet-title">
+                <div class="section-bullet-title-dot"></div>
+                <h3 class="section-bullet-title-text">Menu</h3>
+            </div>
+
+            <ul class="menu-items-container">
+                <li>
+                    <a href="#">
+                        <div class="menu-item-container">
+                            <div class="menu-item-container-img">
+                                <img src="../assets/img/pollo_placeholder.png" alt="Pollo">
+                            </div>
+                            <div class="menu-item-container-info">
+                                <h4 class="menu-item-title">Combo de pollo #1</h4>
+                                <span class="menu-item-cta">Ver más</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="menu-item-container">
+                            <div class="menu-item-container-img">
+                                <img src="../assets/img/pollo_placeholder.png" alt="Pollo">
+                            </div>
+                            <div class="menu-item-container-info">
+                                <h4 class="menu-item-title">Combo de pollo #2</h4>
+                                <span class="menu-item-cta">Ver más</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="menu-item-container">
+                            <div class="menu-item-container-img">
+                                <img src="../assets/img/pollo_placeholder.png" alt="Pollo">
+                            </div>
+                            <div class="menu-item-container-info">
+                                <h4 class="menu-item-title">Combo de pollo #3</h4>
+                                <span class="menu-item-cta">Ver más</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="menu-item-container">
+                            <div class="menu-item-container-img">
+                                <img src="../assets/img/pollo_placeholder.png" alt="Pollo">
+                            </div>
+                            <div class="menu-item-container-info">
+                                <h4 class="menu-item-title">Combo de pollo #4</h4>
+                                <span class="menu-item-cta">Ver más</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="menu-item-container">
+                            <div class="menu-item-container-img">
+                                <img src="../assets/img/pollo_placeholder.png" alt="Pollo">
+                            </div>
+                            <div class="menu-item-container-info">
+                                <h4 class="menu-item-title">Combo de pollo #5</h4>
+                                <span class="menu-item-cta">Ver más</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="menu-item-container">
+                            <div class="menu-item-container-img">
+                                <img src="../assets/img/pollo_placeholder.png" alt="Pollo">
+                            </div>
+                            <div class="menu-item-container-info">
+                                <h4 class="menu-item-title">Combo de pollo #6</h4>
+                                <span class="menu-item-cta">Ver más</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="menu-item-container">
+                            <div class="menu-item-container-img">
+                                <img src="../assets/img/pollo_placeholder.png" alt="Pollo">
+                            </div>
+                            <div class="menu-item-container-info">
+                                <h4 class="menu-item-title">Combo de pollo #7</h4>
+                                <span class="menu-item-cta">Ver más</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="eventos-info-container">
+            <div class="eventos-info-parts-container">
+                <h3>Pinulito para eventos</h3>
+                <p>¿Reunión familiar? ¿celebración en la oficina? ¿cumpleaños? Programa tu pedido de Pollo Pinulito y nosotros nos encargamos de lo demás. Que tu único problema sea que los invitados quieran repetirse.</p>
+                <a class="button_type_1" href="/eventos/">MÁS INFORMACIÓN</a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-sections-container">
+                <div class="footer-section-container">
+                    <h4>Nuestra comida</h4>
+                    <ul>
+                        <li>
+                            <a href="/menu/">Menu</a>
+                        </li>
+                        <li>
+                            <a href="/sucursales/">Sucursales</a>
+                        </li>
+                        <li>
+                            <a href="/eventos/">Pinulito para eventos</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-section-container">
+                    <h4>Sigamos en contacto</h4>
+                    <ul>
+                        <li>
+                            <a href="#">Facebook</a>
+                        </li>
+                        <li>
+                            <a href="#">Instagram</a>
+                        </li>
+                        <li>
+                            <a href="#">Contáctanos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
