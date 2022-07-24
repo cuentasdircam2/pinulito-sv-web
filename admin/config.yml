@@ -19,7 +19,7 @@ collections:
         widget: "list"
         allow_add: true
         field:
-          - {label: "Nombre", name: "menu-item-part-name", widget: "string"}
+          - {label: String, name: string, widget: string}
   - name: "sucursales-san-salvador"
     label: "Sucursales de San Salvador"
     folder: "_data/sucursales/san-salvador"
