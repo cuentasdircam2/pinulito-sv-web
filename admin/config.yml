@@ -14,7 +14,7 @@ collections:
       - {label: "Nombre", name: "title", widget: "string"}
       - {label: "Descripción", name: "menu-item-desc", widget: "text"}
       - {label: "Precio (sin $)", name: "menu-item-precio", widget: "string"}
-      - {label: "¿Es extra?", name: "menu-item-is-extra", widget: "boolean", default: false}
+      - {label: "¿Es extra/acompañamiento?", name: "menu-item-is-extra", widget: "boolean", default: false}
       - label: "Partes del combo"
         name: "menu-item-parts"
         widget: "list"
