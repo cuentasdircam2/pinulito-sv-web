@@ -2,15 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 
-function ensureDirectoryExistence(filePath) {
-    let dirname = path.dirname(filePath);
-    if (fs.existsSync(dirname)) {
-        return true;
-    }
-    ensureDirectoryExistence(dirname);
-    fs.mkdirSync(dirname);
-}
-
 module.exports = {
 
     onPostBuild: ({ inputs, constants }) => {
@@ -56,7 +47,13 @@ module.exports = {
         //     }
         // })
 
-        if(ensureDirectoryExistence(`${dataDir}/merged/menu_merged.json`)){
+        console.log(menuResult);
+        if (fs.existsSync(`${dataDir}/merged`)) {
+            fs.writeFileSync(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult));
+            console.log(menuResult);
+            console.log('menu merged');
+        }else{
+            fs.mkdirSync(`${dataDir}/merged`);
             fs.writeFileSync(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult));
             console.log(menuResult);
             console.log('menu merged');
