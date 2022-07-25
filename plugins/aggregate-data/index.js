@@ -1,66 +1,70 @@
 const fs = require('fs');
-const path = require('path');
 const glob = require('glob');
 
 module.exports = {
 
-    onPostBuild: ({ inputs, constants }) => {
+    onPostBuild: ({ inputs }) => {
 
         let dataDir = `${inputs.dataDir}`;
-        console.log(constants);
-        console.log(dataDir);
 
-        // Aggregate menu
+        // START Aggregate menu
         let menuResult = {
             items: []
         };
 
-        console.log('before glob');
-        let files = glob.sync(`${dataDir}/menu/*.json`);
-        if(files) {
-            console.log('inside glob - no err - files');
+        let menuFiles = glob.sync(`${dataDir}/menu/*.json`);
+        if(menuFiles) {
             for(let i = 0; i < files.length; i++){
-                console.log(files[i]);
-                let _tempData = fs.readFileSync(`${files[i]}`);
-                menuResult.items.push(JSON.parse(_tempData));
+                let _tempData = JSON.parse(fs.readFileSync(`${menuFiles[i]}`));
+                menuResult.items.push(_tempData);
             }
+            console.log('Menu merged.');
         }else{
-            console.log('inside glob - no err - no files');
+            console.log('No menu files to merge.');
         }
-        // glob(`${dataDir}/menu/*.json`, function (err, files) {
-        //     console.log('inside glob');
-        //     if(!err) {
-        //         console.log('inside glob - no err');
-        //         if(files) {
-        //             console.log('inside glob - no err - files');
-        //             for(let i = 0; i < files.length; i++){
-        //                 console.log(files[i]);
-        //                 let _tempData = fs.readFileSync(`${dataDir}/menu/${files[i]}`);
-        //                 menuResult.items.push(JSON.parse(_tempData));
-        //             }
-        //         }else{
-        //             console.log('inside glob - no err - no files');
-        //         }
-        //     }else{
-        //         console.log('inside glob - yes err');
-        //         console.error(err);
-        //     }
-        // })
+        // END Aggregate menu
 
-        console.log(menuResult);
+
+        // START Aggregate sucursales
+        let sucursalesResult = {
+            'ahuachapan': [],
+            'cabanas': [],
+            'chalatenango': [],
+            'cuscatlan': [],
+            'la-libertad': [],
+            'la-paz': [],
+            'la-union': [],
+            'morazan': [],
+            'san-miguel': [],
+            'san-salvador': [],
+            'san-vicente': [],
+            'santa-ana': [],
+            'sonsonate': [],
+            'usulutan': [],
+        };
+        let sucursalesFiles = glob.sync(`${dataDir}/sucursales/**/*.json`);
+        if(sucursalesFiles) {
+            for(let i = 0; i < files.length; i++){
+                let _tempData = JSON.parse(fs.readFileSync(`${sucursalesFiles[i]}`));
+                sucursalesResult[_tempData['departamento-sucursal']].push(_tempData);
+            }
+            console.log('Sucursales merged.');
+        }else{
+            console.log('No sucursales files to merge.');
+        }
+        // END Aggregate sucursales
+
+
         if (!fs.existsSync(`${dataDir}/merged`)) {
             fs.mkdirSync(`${dataDir}/merged`);
+            console.log(`Directory: ${dataDir}/merged created.`)
         }
 
         fs.writeFileSync(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult));
-        console.log('menu merged');
-        // fs.writeFile(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult), { encoding: 'utf8' }, err => {
-        //     if(!err) {
-        //         console.log('menu merged');
-        //     }else{
-        //         console.error(err);
-        //     }
-        // })
+        console.log(`Menu merged written to ${dataDir}/merged/menu_merged.json`);
+
+        fs.writeFileSync(`${dataDir}/merged/sucursales_merged.json`, JSON.stringify(sucursalesResult));
+        console.log(`Menu merged written to ${dataDir}/merged/sucursales_merged.json`);
     },
 
 }
