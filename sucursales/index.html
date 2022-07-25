@@ -92,8 +92,6 @@
 
         let sucursalesUl;
 
-        let sucursalesDetails;
-
         let sucursalesDic = {
             'ahuachapan': 'Ahuachapán',
             'cabanas': 'Cabañas',
@@ -118,15 +116,14 @@
             fetch('/_data/merged/sucursales_merged.json')
             .then(response => response.json())
             .then(data => {
-                sucursalesDetails = data.items;
-                handleSucuesalesRender(sucursalesUl, sucursalesDetails);
+                handleSucuesalesRender(data);
             })
             .catch(err => {
                 console.error(err);
             })
         }
 
-        function handleSucuesalesRender(sucursalesUl, sucursalesDetails) {
+        function handleSucuesalesRender(sucursalesDetails) {
 
             let sucursales = [];
             let sucursalesKeys = Object.keys(sucursalesDetails);
