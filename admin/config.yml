@@ -32,8 +32,6 @@ collections:
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
-      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
-      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
       - label: "Servicios de domicilio"
         name: "domicilio-sucursal"
         widget: "object"
@@ -42,6 +40,14 @@ collections:
           - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
           - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
           - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Información de Google Maps"
+        name: "google-maps-info-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa DESKTOP", name: "mapa-url-desktop-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa MOBILE", name: "mapa-url-mobile-sucursal", widget: "string", default: "#"}
       - label: "Horarios de apertura"
         name: "horario-apertura-sucursal"
         widget: "object"
@@ -175,8 +181,6 @@ collections:
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
-      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
-      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
       - label: "Servicios de domicilio"
         name: "domicilio-sucursal"
         widget: "object"
@@ -185,6 +189,14 @@ collections:
           - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
           - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
           - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Información de Google Maps"
+        name: "google-maps-info-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa DESKTOP", name: "mapa-url-desktop-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa MOBILE", name: "mapa-url-mobile-sucursal", widget: "string", default: "#"}
       - label: "Horarios de apertura"
         name: "horario-apertura-sucursal"
         widget: "object"
@@ -318,8 +330,6 @@ collections:
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
-      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
-      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
       - label: "Servicios de domicilio"
         name: "domicilio-sucursal"
         widget: "object"
@@ -328,6 +338,14 @@ collections:
           - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
           - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
           - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Información de Google Maps"
+        name: "google-maps-info-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa DESKTOP", name: "mapa-url-desktop-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa MOBILE", name: "mapa-url-mobile-sucursal", widget: "string", default: "#"}
       - label: "Horarios de apertura"
         name: "horario-apertura-sucursal"
         widget: "object"
@@ -461,8 +479,6 @@ collections:
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
-      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
-      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
       - label: "Servicios de domicilio"
         name: "domicilio-sucursal"
         widget: "object"
@@ -471,6 +487,14 @@ collections:
           - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
           - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
           - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Información de Google Maps"
+        name: "google-maps-info-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa DESKTOP", name: "mapa-url-desktop-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa MOBILE", name: "mapa-url-mobile-sucursal", widget: "string", default: "#"}
       - label: "Horarios de apertura"
         name: "horario-apertura-sucursal"
         widget: "object"
@@ -604,8 +628,6 @@ collections:
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
-      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
-      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
       - label: "Servicios de domicilio"
         name: "domicilio-sucursal"
         widget: "object"
@@ -614,6 +636,14 @@ collections:
           - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
           - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
           - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Información de Google Maps"
+        name: "google-maps-info-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa DESKTOP", name: "mapa-url-desktop-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa MOBILE", name: "mapa-url-mobile-sucursal", widget: "string", default: "#"}
       - label: "Horarios de apertura"
         name: "horario-apertura-sucursal"
         widget: "object"
@@ -747,8 +777,6 @@ collections:
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
-      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
-      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
       - label: "Servicios de domicilio"
         name: "domicilio-sucursal"
         widget: "object"
@@ -757,6 +785,14 @@ collections:
           - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
           - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
           - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Información de Google Maps"
+        name: "google-maps-info-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa DESKTOP", name: "mapa-url-desktop-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa MOBILE", name: "mapa-url-mobile-sucursal", widget: "string", default: "#"}
       - label: "Horarios de apertura"
         name: "horario-apertura-sucursal"
         widget: "object"
@@ -890,8 +926,6 @@ collections:
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
-      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
-      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
       - label: "Servicios de domicilio"
         name: "domicilio-sucursal"
         widget: "object"
@@ -900,6 +934,14 @@ collections:
           - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
           - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
           - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Información de Google Maps"
+        name: "google-maps-info-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa DESKTOP", name: "mapa-url-desktop-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa MOBILE", name: "mapa-url-mobile-sucursal", widget: "string", default: "#"}
       - label: "Horarios de apertura"
         name: "horario-apertura-sucursal"
         widget: "object"
@@ -1033,8 +1075,6 @@ collections:
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
-      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
-      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
       - label: "Servicios de domicilio"
         name: "domicilio-sucursal"
         widget: "object"
@@ -1043,6 +1083,14 @@ collections:
           - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
           - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
           - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Información de Google Maps"
+        name: "google-maps-info-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa DESKTOP", name: "mapa-url-desktop-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa MOBILE", name: "mapa-url-mobile-sucursal", widget: "string", default: "#"}
       - label: "Horarios de apertura"
         name: "horario-apertura-sucursal"
         widget: "object"
@@ -1176,8 +1224,6 @@ collections:
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
-      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
-      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
       - label: "Servicios de domicilio"
         name: "domicilio-sucursal"
         widget: "object"
@@ -1186,6 +1232,14 @@ collections:
           - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
           - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
           - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Información de Google Maps"
+        name: "google-maps-info-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa DESKTOP", name: "mapa-url-desktop-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa MOBILE", name: "mapa-url-mobile-sucursal", widget: "string", default: "#"}
       - label: "Horarios de apertura"
         name: "horario-apertura-sucursal"
         widget: "object"
@@ -1319,8 +1373,6 @@ collections:
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
-      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
-      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
       - label: "Servicios de domicilio"
         name: "domicilio-sucursal"
         widget: "object"
@@ -1329,6 +1381,14 @@ collections:
           - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
           - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
           - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Información de Google Maps"
+        name: "google-maps-info-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa DESKTOP", name: "mapa-url-desktop-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa MOBILE", name: "mapa-url-mobile-sucursal", widget: "string", default: "#"}
       - label: "Horarios de apertura"
         name: "horario-apertura-sucursal"
         widget: "object"
@@ -1462,8 +1522,6 @@ collections:
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
-      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
-      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
       - label: "Servicios de domicilio"
         name: "domicilio-sucursal"
         widget: "object"
@@ -1472,6 +1530,14 @@ collections:
           - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
           - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
           - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Información de Google Maps"
+        name: "google-maps-info-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa DESKTOP", name: "mapa-url-desktop-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa MOBILE", name: "mapa-url-mobile-sucursal", widget: "string", default: "#"}
       - label: "Horarios de apertura"
         name: "horario-apertura-sucursal"
         widget: "object"
@@ -1605,8 +1671,6 @@ collections:
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
-      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
-      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
       - label: "Servicios de domicilio"
         name: "domicilio-sucursal"
         widget: "object"
@@ -1615,6 +1679,14 @@ collections:
           - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
           - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
           - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Información de Google Maps"
+        name: "google-maps-info-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa DESKTOP", name: "mapa-url-desktop-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa MOBILE", name: "mapa-url-mobile-sucursal", widget: "string", default: "#"}
       - label: "Horarios de apertura"
         name: "horario-apertura-sucursal"
         widget: "object"
@@ -1748,8 +1820,6 @@ collections:
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
-      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
-      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
       - label: "Servicios de domicilio"
         name: "domicilio-sucursal"
         widget: "object"
@@ -1758,6 +1828,14 @@ collections:
           - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
           - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
           - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Información de Google Maps"
+        name: "google-maps-info-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa DESKTOP", name: "mapa-url-desktop-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa MOBILE", name: "mapa-url-mobile-sucursal", widget: "string", default: "#"}
       - label: "Horarios de apertura"
         name: "horario-apertura-sucursal"
         widget: "object"
@@ -1891,8 +1969,6 @@ collections:
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
-      - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
-      - {label: "Link de mapa", name: "mapa-url-sucursal", widget: "string", default: "#"}
       - label: "Servicios de domicilio"
         name: "domicilio-sucursal"
         widget: "object"
@@ -1901,6 +1977,14 @@ collections:
           - {label: "Pedidos Ya", name: "pedidos-ya-sucursal", widget: "boolean", default: false}
           - {label: "Hugo", name: "hugo-sucursal", widget: "boolean", default: false}
           - {label: "Uber Eats", name: "uber-eats-sucursal", widget: "boolean", default: false}
+      - label: "Información de Google Maps"
+        name: "google-maps-info-sucursal"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Link de Google Maps", name: "maps-url-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa DESKTOP", name: "mapa-url-desktop-sucursal", widget: "string", default: "#"}
+          - {label: "Link de mapa MOBILE", name: "mapa-url-mobile-sucursal", widget: "string", default: "#"}
       - label: "Horarios de apertura"
         name: "horario-apertura-sucursal"
         widget: "object"
