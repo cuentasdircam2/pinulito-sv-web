@@ -4,7 +4,7 @@ const glob = require('glob');
 
 module.exports = {
 
-    onBuild: ({ inputs }) => {
+    onSuccess: ({ inputs }) => {
 
         let dataDir = inputs.dataDir;
 
@@ -16,7 +16,8 @@ module.exports = {
             if(!err) {
                 if(files) {
                     for(let i = 0; i < files.length; i++){
-                        menuResult.items.push(JSON.parse(fs.readFileSync(`${dataDir}/menu/${files[i]}`, { encoding: 'utf8' })));
+                        console.log(files[i]);
+                        menuResult.items.push(JSON.parse(fs.readFileSync(`${dataDir}/menu/${files[i]}`)));
                     }
                 }
             }else{
@@ -25,7 +26,7 @@ module.exports = {
         })
 
         if(ensureDirectoryExistence(`${dataDir}/merged/menu_merged.json`)){
-            fs.writeFileSync(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult), { encoding: 'utf8' })
+            fs.writeFileSync(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult))
             utils.status.show({
                 // Required.
                 summary: 'Menu merged successfully',
