@@ -1,0 +1,4 @@
+name: aggregate-data
+inputs:
+  - name: dataDir
+    required: true
