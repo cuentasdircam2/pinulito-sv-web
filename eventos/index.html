@@ -93,6 +93,9 @@
         }
         .menu-item-container .menu-item-container-img {
             flex: 1 1 35%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             /* background-color: khaki; */
         }
         .menu-item-container .menu-item-container-info {
@@ -104,7 +107,7 @@
             flex-direction: column;
         }
         .menu-item-container .menu-item-container-img img {
-            max-width: 100%;
+            max-width: 80%;
         }
 
         .menu-item-title {
@@ -244,7 +247,13 @@
             font-family: var(--standard-font);
             font-size: 2rem;
             font-weight: 700;
-            padding-left: 2rem;
+            padding: 0.5rem 1rem 0.5rem 14rem;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            background-color: var(--color-yellow);
+            z-index: 2;
+            border-top-right-radius: 18px;
         }
 
 
@@ -252,6 +261,10 @@
             content: '* ';
             color: red;
             position: relative;
+        }
+
+        .extras-section-title {
+            font-size: 3rem;
         }
 
 
@@ -281,7 +294,7 @@
             }
 
             .menu-total {
-                padding-left: 1rem !important;
+                padding: 0.5rem 0.5rem 0.5rem 1rem;
             }
         }
 
@@ -372,7 +385,7 @@
 
             </ul>
 
-            <h3>Extras:</h3>
+            <h3 class="extras-section-title">Extras:</h3>
             <ul class="menu-items-container">
 
 

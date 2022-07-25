@@ -39,42 +39,16 @@
         </div>
         <div id="locations-actual-container">
             <h4>Departamentos</h4>
-            <ul>
+            <ul class="sucursales-list">
 
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">Chalatenango</span>
-                        <span class="sucursales-count"> (1)</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">Cuscatlán</span>
-                        <span class="sucursales-count"> (1)</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">La Libertad</span>
-                        <span class="sucursales-count"> (7)</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/sucursales/san-salvador/">
-                        <span class="sucursal-location">San Salvador</span>
-                        <span class="sucursales-count"> (17)</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">Sonsonate</span>
-                        <span class="sucursales-count"> (1)</span>
-                    </a>
-                </li>
+                <template id="sucursal_location_dep">
+                    <li>
+                        <a class="sucursal-url<" href="#">
+                            <span class="sucursal-location"></span>
+                            <span class="sucursales-count"></span>
+                        </a>
+                    </li>
+                </template>
 
             </ul>
         </div>
@@ -113,6 +87,76 @@
         </footer>
 
     </div>
+
+    <script>
+
+        let sucursalesUl;
+
+        let sucursalesDic = {
+            'ahuachapan': 'Ahuachapán',
+            'cabanas': 'Cabañas',
+            'chalatenango': 'Chalatenango',
+            'cuscatlan': 'Cuscatlán',
+            'la-libertad': 'La Libertad',
+            'la-paz': 'La Paz',
+            'la-union': 'La Unión',
+            'morazan': 'Morazán',
+            'san-miguel': 'San Miguel',
+            'san-salvador': 'San Salvador',
+            'san-vicente': 'San Vicente',
+            'sana-ana': 'Santa Ana',
+            'sonsonate': 'Sonsonate',
+            'usulutan': 'Usulutan',
+        }
+
+        window.onload = function() {
+
+            sucursalesUl = document.getElementsByClassName('sucursales-list')[0];
+
+            fetch('/_data/merged/sucursales_merged.json')
+            .then(response => response.json())
+            .then(data => {
+                sucursalesDetails = data.items;
+                handleSucuesalesRender(sucursalesUl, sucursalesDetails);
+            })
+            .catch(err => {
+                console.error(err);
+            })
+        }
+
+        function handleSucuesalesRender(sucursalesUl, sucursalesDetails) {
+
+            let sucursales = [];
+            let sucursalesKeys = Object.keys(sucursalesDetails);
+
+            for(let i = 0; i < sucursalesKeys; i++){
+                if(sucursalesDetails[sucursalesKeys[i]].length > 0){
+                    sucursales.push({
+                        name: sucursalesDic[sucursalesKeys[i]],
+                        url: `/sucursales/${sucursalesKeys[i]}/`,
+                        count: sucursalesDetails[sucursalesKeys[i]].length
+                    })
+                }
+            }
+
+            sucursales.forEach(sucursalDep => {
+                let liElement = document.getElementById('sucursal_location_dep');
+
+                let aElement = liElement.content.querySelector('.sucursal-url');
+                    aElement.href = sucursalDep.url;
+
+                let locElement = liElement.content.querySelector('.sucursal-location');
+                    locElement.innerText = sucursalDep.name;
+                
+                let countElement = liElement.content.querySelector('.sucursal-count');
+                    countElement.innerText = ` (${sucursalDep.count})`;
+
+                let clone = document.importNode(liElement.content, true);
+                sucursalesUl.appendChild(clone);
+            });
+        }
+
+    </script>
 
 </body>
 </html>
