@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pollo Pinulito | Menu</title>
+    <title>Sucursal | Pinulito</title>
     <link rel="stylesheet" href="../../../css/site-wide-rules.css">
     <link rel="stylesheet" href="../../../css/locations-shared.css">
     <style>
@@ -207,9 +207,11 @@
                 let horarioDomingo = document.getElementById('loc-horario-domingo');
                 let mapDisplay = document.getElementsByClassName('map-display')[0];
 
+                document.getElementsByTagName('title')[0].innerText = `Sucursal de ${sucursalData.title} | Pinulito`;
                 title.innerText = sucursalData.title;
                 addr.innerText = sucursalData['direccion-sucursal'];
                 tel.innerText = sucursalData['telefono-sucursal'];
+                tel.href = `tel:+503${sucursalData['telefono-sucursal']}`;
                 mapsBtn1.href = sucursalData['google-maps-info-sucursal']['maps-url-sucursal'];
                 mapsBtn2.href = sucursalData['google-maps-info-sucursal']['maps-url-sucursal'];
                 mapDisplay.setAttribute('style', `--maps-desktop: url(${sucursalData['google-maps-info-sucursal']['mapa-url-desktop-sucursal']}); --maps-mobile: url(${sucursalData['google-maps-info-sucursal']['mapa-url-mobile-sucursal']});`);
