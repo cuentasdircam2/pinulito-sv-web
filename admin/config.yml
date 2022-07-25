@@ -10,6 +10,7 @@ collections:
     extension: "json"
     slug: "{{year}}-{{month}}-{{day}}_{{title}}"
     fields:
+      - {label: "Nombre", name: "title", widget: "hidden", default: "Combos del inicio"}
       - label: "Lista de combos"
         name: "combos-list-inicio"
         widget: "list"
@@ -20,7 +21,7 @@ collections:
             widget: "relation"
             collection: "menu"
             search_fields: ["title"]
-            value_field: "title"
+            value_field: "{{slug}}"
             display_fields: ["title", "menu-item-precio"]
   - name: "menu"
     label: "Menu"
