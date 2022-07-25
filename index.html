@@ -396,13 +396,13 @@
             for(let i = 0; i < data.length; i++){
 
                 let liElement = document.getElementById('menu-item-template');
+                
                 let imgElement = liElement.content.querySelector('.menu-item-container-img > img');
                     imgElement.src = data[i]['imagen-thumb'];
                     imgElement.alt = data[i].title;
 
                 let titleElement = liElement.content.querySelector('.menu-item-title');
                     titleElement.innerText = data[i].title;
-                    inputElement.id = data[i].title;
                 
                 let urlElement = liElement.content.querySelector('.menu-item-url');
                     urlElement.href = `/menu/articulo?n=${encodeURIComponent(data[i].title)}`;
