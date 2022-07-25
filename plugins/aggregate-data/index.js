@@ -23,13 +23,22 @@ module.exports = {
             }
         })
 
-        fs.writeFile(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult), { encoding: 'utf8' }, err => {
-            if(!err) {
-                console.log('menu merged');
-            }else{
-                console.error(err);
-            }
-        })
+        fs.writeFileSync(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult), { encoding: 'utf8' })
+        utils.status.show({
+            // Required.
+            summary: 'Menu merged successfully',
+            // Optional. Empty by default.
+            text: 'Menu merged',
+        });
+        console.log(menuResult);
+        console.log('menu merged');
+        // fs.writeFile(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult), { encoding: 'utf8' }, err => {
+        //     if(!err) {
+        //         console.log('menu merged');
+        //     }else{
+        //         console.error(err);
+        //     }
+        // })
     },
 
 }
