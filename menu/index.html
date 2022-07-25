@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pollo Pinulito | Menu</title>
+    <title>Menu | Pollo Pinulito</title>
     <link rel="stylesheet" href="../css/site-wide-rules.css">
     <style>
 
@@ -183,97 +183,23 @@
             </div>
 
             <ul class="menu-items-container">
-                <li>
-                    <a href="#">
-                        <div class="menu-item-container">
-                            <div class="menu-item-container-img">
-                                <img src="../assets/img/pollo_placeholder.png" alt="Pollo">
+
+                <template id="menu-item-template">
+                    <li>
+                        <a class="menu-item-url" href="#">
+                            <div class="menu-item-container">
+                                <div class="menu-item-container-img">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="menu-item-container-info">
+                                    <h4 class="menu-item-title"></h4>
+                                    <span class="menu-item-cta">Ver más</span>
+                                </div>
                             </div>
-                            <div class="menu-item-container-info">
-                                <h4 class="menu-item-title">Combo de pollo #1</h4>
-                                <span class="menu-item-cta">Ver más</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="menu-item-container">
-                            <div class="menu-item-container-img">
-                                <img src="../assets/img/pollo_placeholder.png" alt="Pollo">
-                            </div>
-                            <div class="menu-item-container-info">
-                                <h4 class="menu-item-title">Combo de pollo #2</h4>
-                                <span class="menu-item-cta">Ver más</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="menu-item-container">
-                            <div class="menu-item-container-img">
-                                <img src="../assets/img/pollo_placeholder.png" alt="Pollo">
-                            </div>
-                            <div class="menu-item-container-info">
-                                <h4 class="menu-item-title">Combo de pollo #3</h4>
-                                <span class="menu-item-cta">Ver más</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="menu-item-container">
-                            <div class="menu-item-container-img">
-                                <img src="../assets/img/pollo_placeholder.png" alt="Pollo">
-                            </div>
-                            <div class="menu-item-container-info">
-                                <h4 class="menu-item-title">Combo de pollo #4</h4>
-                                <span class="menu-item-cta">Ver más</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="menu-item-container">
-                            <div class="menu-item-container-img">
-                                <img src="../assets/img/pollo_placeholder.png" alt="Pollo">
-                            </div>
-                            <div class="menu-item-container-info">
-                                <h4 class="menu-item-title">Combo de pollo #5</h4>
-                                <span class="menu-item-cta">Ver más</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="menu-item-container">
-                            <div class="menu-item-container-img">
-                                <img src="../assets/img/pollo_placeholder.png" alt="Pollo">
-                            </div>
-                            <div class="menu-item-container-info">
-                                <h4 class="menu-item-title">Combo de pollo #6</h4>
-                                <span class="menu-item-cta">Ver más</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="menu-item-container">
-                            <div class="menu-item-container-img">
-                                <img src="../assets/img/pollo_placeholder.png" alt="Pollo">
-                            </div>
-                            <div class="menu-item-container-info">
-                                <h4 class="menu-item-title">Combo de pollo #7</h4>
-                                <span class="menu-item-cta">Ver más</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
+                        </a>
+                    </li>
+                </template>
+
             </ul>
         </div>
 
@@ -319,6 +245,49 @@
         </footer>
 
     </div>
+
+    <script>
+
+        window.onload = function() {
+
+            let ulElement = document.getElementsByClassName('menu-items-container')[0];
+
+            fetch('/_data/merged/menu_merged.json')
+            .then(response => response.json())
+            .then(data => {
+                handleMenuRender(ulElement, data.items);
+            })
+            .catch(err => {
+                console.error(err);
+            })
+        }
+
+        function handleMenuRender(ulElement, data) {
+
+            // Create menu items
+            for(let i = 0; i < data.length; i++){
+
+                let liElement = document.getElementById('menu-item-template');
+                
+                let imgElement = liElement.content.querySelector('.menu-item-container-img > img');
+                    imgElement.src = data[i]['imagen-thumb'];
+                    imgElement.alt = data[i].title;
+
+                let titleElement = liElement.content.querySelector('.menu-item-title');
+                    titleElement.innerText = data[i].title;
+                
+                let urlElement = liElement.content.querySelector('.menu-item-url');
+                    urlElement.href = `/menu/articulo?n=${encodeURIComponent(data[i].title)}`;
+
+                let clone = document.importNode(liElement.content, true);
+
+                if(!data[i]['menu-item-is-extra']) {
+                    ulElement.appendChild(clone);
+                }
+            }
+
+        }
+    </script>
 
 </body>
 </html>
