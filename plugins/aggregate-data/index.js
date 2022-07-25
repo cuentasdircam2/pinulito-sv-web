@@ -24,7 +24,7 @@ module.exports = {
             items: []
         };
 
-        onsole.log('before glob');
+        console.log('before glob');
         glob(`${dataDir}/menu/*.json`, function (err, files) {
             console.log('inside glob');
             if(!err) {
