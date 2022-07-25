@@ -380,7 +380,7 @@
                 <h3 class="section-bullet-title-text">Paso #2: Llena tus datos</h3>
             </div>
 
-            <form action="#!" method="post" onsubmit="console.log(1); return false;">
+            <form name="Eventos" method="post" onsubmit="submitForm(); return false;">
                 <fieldset class="eventos-form-two-fields-set">
 
                     <div class="custom-field-75">
@@ -535,14 +535,20 @@
             // Check if menu > 0
             let calcSum = 0;
             let totalAmount = 0;
+            let finalDetalles = ``;
             for(let i = 0; i < menuKeys.length; i++){
                 totalAmount += Number(menuDetails[i]['menu-item-precio']) * calculatorValues[menuKeys[i]];
                 calcSum += calculatorValues[menuKeys[i]];
+
+                if(calculatorValues[menuKeys[i]] > 0){
+                    finalDetalles += `${menuDetails[i].title} x ${calculatorValues[menuKeys[i]]}\n`;
+                }
             }
             totalAmount = roundToTwo(totalAmount);
             totalSpan.innerText = `Total: $${totalAmount}`;
             submitBtn.disabled = !(totalAmount >= 100);
             submitBtn.title = !(totalAmount >= 100) ? 'Pedido mínimo: $100' : 'Enviar solicitud de pedido';
+            eventosDetalles.value = finalDetalles;
         }
 
         function toggleMenuDetails(element) {
@@ -592,9 +598,9 @@
                     let detailsText = '';
                     for(let j = 0; j < data[i]['menu-item-parts'].length; j++){
                         if(j < data[i]['menu-item-parts'].length-1) {
-                            detailsText += `${data[i]['menu-item-parts'][j]}, `
+                            detailsText += `${data[i]['menu-item-parts'][j]['menu-item-part-name']}, `
                         }else{
-                            detailsText += `${data[i]['menu-item-parts'][j]}.`
+                            detailsText += `${data[i]['menu-item-parts'][j]['menu-item-part-name']}.`
                         }
                     }
                     detailsElement.innerText = detailsText;
@@ -618,6 +624,10 @@
 
             menuKeys = Object.keys(calculatorValues);
 
+        }
+
+        function submitForm(ev) {
+            console.log(ev);
         }
 
         function roundToTwo(num) {
