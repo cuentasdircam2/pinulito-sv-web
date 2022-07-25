@@ -380,7 +380,7 @@
                 <h3 class="section-bullet-title-text">Paso #2: Llena tus datos</h3>
             </div>
 
-            <form name="Eventos" method="post" onsubmit="submitForm(); return false;">
+            <form id="eventosForm" name="Eventos" method="post" onsubmit="submitForm(); return false;" netlify>
                 <fieldset class="eventos-form-two-fields-set">
 
                     <div class="custom-field-75">
@@ -626,8 +626,16 @@
 
         }
 
-        function submitForm(ev) {
-            console.log(ev);
+        function submitForm() {
+            let eventosForm = document.getElementById('eventosForm');
+            let formData = new FormData(eventosForm);
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString(),
+            })
+                .then(() => console.log("Form successfully submitted"))
+                .catch((error) => alert(error));
         }
 
         function roundToTwo(num) {
