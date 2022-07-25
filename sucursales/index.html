@@ -43,7 +43,7 @@
 
                 <template id="sucursal_location_dep">
                     <li>
-                        <a class="sucursal-url<" href="#">
+                        <a class="sucursal-url" href="#">
                             <span class="sucursal-location"></span>
                             <span class="sucursales-count"></span>
                         </a>
@@ -138,7 +138,10 @@
                 }
             }
 
+            console.log(sucursales);
+
             sucursales.forEach(sucursalDep => {
+                console.log(sucursalDep)
                 let liElement = document.getElementById('sucursal_location_dep');
 
                 let aElement = liElement.content.querySelector('.sucursal-url');
