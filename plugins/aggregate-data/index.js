@@ -25,25 +25,36 @@ module.exports = {
         };
 
         console.log('before glob');
-        glob(`${dataDir}/menu/*.json`, function (err, files) {
-            console.log('inside glob');
-            if(!err) {
-                console.log('inside glob - no err');
-                if(files) {
-                    console.log('inside glob - no err - files');
-                    for(let i = 0; i < files.length; i++){
-                        console.log(files[i]);
-                        let _tempData = fs.readFileSync(`${dataDir}/menu/${files[i]}`);
-                        menuResult.items.push(JSON.parse(_tempData));
-                    }
-                }else{
-                    console.log('inside glob - no err - no files');
-                }
-            }else{
-                console.log('inside glob - yes err');
-                console.error(err);
+        let files = glob.sync(`${dataDir}/menu/*.json`);
+        if(files) {
+            console.log('inside glob - no err - files');
+            for(let i = 0; i < files.length; i++){
+                console.log(files[i]);
+                let _tempData = fs.readFileSync(`${dataDir}/menu/${files[i]}`);
+                menuResult.items.push(JSON.parse(_tempData));
             }
-        })
+        }else{
+            console.log('inside glob - no err - no files');
+        }
+        // glob(`${dataDir}/menu/*.json`, function (err, files) {
+        //     console.log('inside glob');
+        //     if(!err) {
+        //         console.log('inside glob - no err');
+        //         if(files) {
+        //             console.log('inside glob - no err - files');
+        //             for(let i = 0; i < files.length; i++){
+        //                 console.log(files[i]);
+        //                 let _tempData = fs.readFileSync(`${dataDir}/menu/${files[i]}`);
+        //                 menuResult.items.push(JSON.parse(_tempData));
+        //             }
+        //         }else{
+        //             console.log('inside glob - no err - no files');
+        //         }
+        //     }else{
+        //         console.log('inside glob - yes err');
+        //         console.error(err);
+        //     }
+        // })
 
         if(ensureDirectoryExistence(`${dataDir}/merged/menu_merged.json`)){
             fs.writeFileSync(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult));
