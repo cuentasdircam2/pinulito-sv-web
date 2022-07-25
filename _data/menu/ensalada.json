@@ -1,0 +1,12 @@
+{
+  "menu-item-is-extra": true,
+  "imagen": "/assets/img/uploads/logo_single.png",
+  "title": "Ensalada",
+  "menu-item-desc": "1 ensalada",
+  "menu-item-precio": "0.80",
+  "menu-item-parts": [
+    {
+      "menu-item-part-name": "1 ensalada"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "menu-item-is-extra": false,
+  "imagen": "/assets/img/uploads/logo_single.png",
+  "title": "Combo Más Kool",
+  "menu-item-desc": "¡Un combo inigualable! cinco piezas de pollo, dos ensaladas y cuatro panes para que sacies tu hambre.",
+  "menu-item-precio": "6.95",
+  "menu-item-parts": [
+    {
+      "menu-item-part-name": "5 piezas (alas y piernas)"
+    },
+    {
+      "menu-item-part-name": "2 ensaladas"
+    },
+    {
+      "menu-item-part-name": "4 panes"
+    }
+  ]
+}

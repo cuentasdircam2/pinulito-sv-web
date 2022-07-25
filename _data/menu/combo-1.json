@@ -2,17 +2,20 @@
   "menu-item-is-extra": false,
   "imagen": "/assets/img/uploads/logo_single.png",
   "title": "Combo 1",
-  "menu-item-desc": "Prueba",
-  "menu-item-precio": "3.75",
+  "menu-item-desc": "¡El mejor combo para calmar el hambre! 2 piezas de pollo, una ensalada, un pan y una soda a un precio inigualable.",
+  "menu-item-precio": "3.50",
   "menu-item-parts": [
     {
-      "menu-item-part-name": "5 piezas"
+      "menu-item-part-name": "2 piezas (alas y piernes)"
     },
     {
-      "menu-item-part-name": "2 panes"
+      "menu-item-part-name": "1 ensalada"
     },
     {
-      "menu-item-part-name": "ensalada"
+      "menu-item-part-name": "1 pan"
+    },
+    {
+      "menu-item-part-name": "1 soda"
     }
   ]
 }

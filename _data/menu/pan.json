@@ -1,0 +1,12 @@
+{
+  "menu-item-is-extra": true,
+  "imagen": "/assets/img/uploads/logo_single.png",
+  "title": "Pan",
+  "menu-item-desc": "1 pan",
+  "menu-item-precio": "0.20",
+  "menu-item-parts": [
+    {
+      "menu-item-part-name": "1 pan"
+    }
+  ]
+}

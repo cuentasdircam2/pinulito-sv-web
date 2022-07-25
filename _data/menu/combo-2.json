@@ -2,17 +2,23 @@
   "menu-item-is-extra": false,
   "imagen": "/assets/img/uploads/logo_single.png",
   "title": "Combo 2",
-  "menu-item-desc": "Prueba",
-  "menu-item-precio": "5.99",
+  "menu-item-desc": "¿Con hambre? éste combo es la mejor elección para ti. Disfruta de tres piezas de pollo, una papa, una ensalada, un pan y una soda al mejor precio.",
+  "menu-item-precio": "4.95",
   "menu-item-parts": [
     {
-      "menu-item-part-name": "5 piezas"
+      "menu-item-part-name": "3 piezas (alas y piernes)"
     },
     {
-      "menu-item-part-name": "2 panes"
+      "menu-item-part-name": "1 papa"
     },
     {
-      "menu-item-part-name": "ensalada"
+      "menu-item-part-name": "1 ensalada"
+    },
+    {
+      "menu-item-part-name": "1 pan"
+    },
+    {
+      "menu-item-part-name": "1 soda"
     }
   ]
 }

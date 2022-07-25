@@ -1,0 +1,24 @@
+{
+  "menu-item-is-extra": false,
+  "imagen": "/assets/img/uploads/logo_single.png",
+  "title": "Familiar 2",
+  "menu-item-desc": "¡Pollo Pinulito para toda la familia! Este combo cuenta con nueve piezas de pollo, tres papas y tres deliciosas ensaladas.",
+  "menu-item-precio": "14.75",
+  "menu-item-parts": [
+    {
+      "menu-item-part-name": "6 piezas (alas y piernas)"
+    },
+    {
+      "menu-item-part-name": "2 muslo"
+    },
+    {
+      "menu-item-part-name": "1 pechugona"
+    },
+    {
+      "menu-item-part-name": "3 papas"
+    },
+    {
+      "menu-item-part-name": "3 ensaladas"
+    }
+  ]
+}

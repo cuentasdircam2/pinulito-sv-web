@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pollo Pinulito | Menu</title>
+    <title>Eventos | Pollo Pinulito</title>
+    <meta name="description" content="¡Disfruta de pollo Pinulito con tu familia, compañeros de trabajo o con quién sea! ¿Para qué cocinar si puedes programar tu pedido de Pinulito y sólo preocuparte de recibirlo? Luego de elegir tus combos y llenar tus datos, uno de nuestros agentes se comunicará contigo para finalizar el pedido.">
     <link rel="stylesheet" href="../css/site-wide-rules.css">
     <style>
 
@@ -371,7 +372,13 @@
 
             </ul>
 
-            <span class="menu-total">Total: $0</span>
+            <h2>Extras:</h2>
+            <ul class="menu-items-container">
+
+
+            </ul>
+
+            <span class="menu-total">Total (estimado): $0</span>
         </div>
 
         <div id="datos-main-container">
@@ -380,7 +387,7 @@
                 <h3 class="section-bullet-title-text">Paso #2: Llena tus datos</h3>
             </div>
 
-            <form id="eventosForm" name="Eventos" method="post" onsubmit="submitForm(); return false;" netlify>
+            <form id="eventosForm" name="Eventos" method="post" onsubmit="submitForm(); return false;" netlify-honeypot="eventos-ciudad" netlify>
                 <fieldset class="eventos-form-two-fields-set">
 
                     <div class="custom-field-75">
@@ -428,18 +435,17 @@
                             <option value="usulutan">Usulután</option>
                         </select>
                     </div>
-                    <!-- <div class="custom-field-50">
-                        <label for="eventos-muni">Municipio:</label>
-                        <select name="eventos-muni" id="eventos-muni" required>
-                            <option value="soyapango">Soyapango</option>
-                        </select>
-                    </div> -->
 
                 </fieldset>
 
                 <div class="custom-field-100">
                     <label for="eventos-notas-adicionales">Notas adicionales:</label>
                     <textarea name="eventos-notas-adicionales" id="eventos-notas-adicionales"></textarea>
+                </div>
+
+                <div class="not-visible">
+                    <label for="eventos-ciudad">No llene este campo si usted es un humano:</label>
+                    <input type="text" id="eventos-ciudad" name="eventos-ciudad">
                 </div>
 
                 <textarea name="detalles" id="eventos-detalles" hidden></textarea>
@@ -545,7 +551,8 @@
                 }
             }
             totalAmount = roundToTwo(totalAmount);
-            totalSpan.innerText = `Total: $${totalAmount}`;
+            finalDetalles += `\nTotal (estimado):$ ${totalAmount}`;
+            totalSpan.innerText = `Total (estimado): $${totalAmount}`;
             submitBtn.disabled = !(totalAmount >= 100);
             submitBtn.title = !(totalAmount >= 100) ? 'Pedido mínimo: $100' : 'Enviar solicitud de pedido';
             eventosDetalles.value = finalDetalles;
@@ -567,26 +574,27 @@
             submitBtn = document.getElementById('eventos-submit-btn');
 
             let ulElement = document.getElementsByClassName('menu-items-container')[0];
+            let ulElementExtras = document.getElementsByClassName('menu-items-container')[1];
 
             fetch('/_data/merged/menu_merged.json')
             .then(response => response.json())
             .then(data => {
                 menuDetails = data.items;
-                handleMenuRender(ulElement, menuDetails);
+                handleMenuRender(ulElement, ulElementExtras, menuDetails);
             })
             .catch(err => {
                 console.error(err);
             })
         }
 
-        function handleMenuRender(ulElement, data) {
+        function handleMenuRender(ulElement, ulElementExtras, data) {
 
             // Create menu items
             for(let i = 0; i < data.length; i++){
 
                 let liElement = document.getElementById('menu-eventos-item');
                 let imgElement = liElement.content.querySelector('.menu-item-container-img > img');
-                    imgElement.src = data[i].imagen;
+                    imgElement.src = data[i]['imagen-thumb'];
 
                 let titleElement = liElement.content.querySelector('.menu-item-title');
                     titleElement.innerText = data[i].title;
@@ -619,7 +627,12 @@
                 calculatorValues[data[i].title] = 0;
 
                 let clone = document.importNode(liElement.content, true);
-                ulElement.appendChild(clone);
+
+                if(!data[i]['menu-item-is-extra']) {
+                    ulElement.appendChild(clone);
+                }else{
+                    ulElementExtras.appendChild(clone);
+                }
             }
 
             menuKeys = Object.keys(calculatorValues);
@@ -627,8 +640,11 @@
         }
 
         function submitForm() {
+            submitBtn.disabled = true;
+
             let eventosForm = document.getElementById('eventosForm');
             let formData = new FormData(eventosForm);
+
             fetch("/", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -641,18 +657,6 @@
         function roundToTwo(num) {
             return +(Math.round(num + "e+2")  + "e-2");
         }
-
-        // document.addEventListener('DOMContentLoaded', event => { 
-
-        //     let keys = Object.keys(calculatorValues);
-        //     for(let i = 0; i < keys.length; i++){
-        //         document.getElementById(keys[i]).value = calculatorValues[keys[i]];
-
-        //         let quantityButtons = document.querySelectorAll(`.eventos-quantity-btn[data-menu-id="${keys[i]}"]`);
-        //         quantityButtons[0].disabled = true;
-        //     }
-
-        // });
     </script>
 
 </body>

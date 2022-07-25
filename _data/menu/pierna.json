@@ -1,0 +1,12 @@
+{
+  "menu-item-is-extra": true,
+  "imagen": "/assets/img/uploads/logo_single.png",
+  "title": "Pierna",
+  "menu-item-desc": "1 pierna",
+  "menu-item-precio": "1.05",
+  "menu-item-parts": [
+    {
+      "menu-item-part-name": "1 pierna"
+    }
+  ]
+}
