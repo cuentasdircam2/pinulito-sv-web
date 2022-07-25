@@ -7,6 +7,7 @@ module.exports = {
     onPostBuild: ({ inputs, constants }) => {
 
         let dataDir = `${constants.PUBLISH_DIR}/${inputs.dataDir}`;
+        console.log(dataDir);
 
         // Aggregate menu
         let menuResult = {
@@ -26,13 +27,7 @@ module.exports = {
         })
 
         if(ensureDirectoryExistence(`${dataDir}/merged/menu_merged.json`)){
-            fs.writeFileSync(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult))
-            utils.status.show({
-                // Required.
-                summary: 'Menu merged successfully',
-                // Optional. Empty by default.
-                text: 'Menu merged',
-            });
+            fs.writeFileSync(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult));
             console.log(menuResult);
             console.log('menu merged');
         }
