@@ -115,7 +115,7 @@
                     let liElement = document.getElementById('sucursal_location_dep');
     
                     let aElement = liElement.content.querySelector('.sucursal-url');
-                        aElement.href = `/sucursales/${departamento}/sucusal?n=${encodeURIComponent(sucursalDep.title)}`;
+                        aElement.href = `/sucursales/${departamento}/sucursal?n=${encodeURIComponent(sucursalDep.title)}`;
     
                     let locElement = liElement.content.querySelector('.sucursal-location');
                         locElement.innerText = sucursalDep.title;
