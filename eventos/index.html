@@ -488,59 +488,9 @@
 
     <script>
 
-        let menuDetails = [
-            {
-                id: 'menu-0-q',
-                title: 'Familiar 1',
-                details: '5 piezas de pollo, 2 ensaladas, 3 panes y 1 soda de 1 litro.',
-                img: '../assets/img/pollo_placeholder.png',
-                price: '8.95'
-            },
-            {
-                id: 'menu-1-q',
-                title: 'Familiar 2',
-                details: '5 piezas de pollo, 2 ensaladas, 3 panes y 1 soda de 1 litro.',
-                img: '../assets/img/pollo_placeholder.png',
-                price: '14.75'
-            },
-            {
-                id: 'menu-2-q',
-                title: 'Full Pechugona',
-                details: '5 piezas de pollo, 2 ensaladas, 3 panes y 1 soda de 1 litro.',
-                img: '../assets/img/pollo_placeholder.png',
-                price: '3.95'
-            },
-            {
-                id: 'menu-3-q',
-                title: 'Combo 1',
-                details: '5 piezas de pollo, 2 ensaladas, 3 panes y 1 soda de 1 litro.',
-                img: '../assets/img/pollo_placeholder.png',
-                price: '3.50'
-            },
-            {
-                id: 'menu-4-q',
-                title: 'Combo 2',
-                details: '5 piezas de pollo, 2 ensaladas, 3 panes y 1 soda de 1 litro.',
-                img: '../assets/img/pollo_placeholder.png',
-                price: '4.95'
-            },
-            {
-                id: 'menu-5-q',
-                title: 'Combo Más Kool',
-                details: '5 piezas de pollo, 2 ensaladas, 3 panes y 1 soda de 1 litro.',
-                img: '../assets/img/pollo_placeholder.png',
-                price: '6.95'
-            },
-        ]
+        let menuDetails;
 
-        let calculatorValues = {
-            'menu-0-q': 0,
-            'menu-1-q': 0,
-            'menu-2-q': 0,
-            'menu-3-q': 0,
-            'menu-4-q': 0,
-            'menu-5-q': 0,
-        }
+        let calculatorValues = {}
 
         let totalSpan;
         let eventosDetalles;
@@ -586,7 +536,7 @@
             let calcSum = 0;
             let totalAmount = 0;
             for(let i = 0; i < menuKeys.length; i++){
-                totalAmount += Number(menuDetails[i].price) * calculatorValues[menuKeys[i]];
+                totalAmount += Number(menuDetails[i]['menu-item-precio']) * calculatorValues[menuKeys[i]];
                 calcSum += calculatorValues[menuKeys[i]];
             }
             totalAmount = roundToTwo(totalAmount);
@@ -610,49 +560,64 @@
 
             submitBtn = document.getElementById('eventos-submit-btn');
 
-            menuKeys = Object.keys(calculatorValues)
-
             let ulElement = document.getElementsByClassName('menu-items-container')[0];
 
             fetch('/_data/merged/menu_merged.json')
             .then(response => response.json())
             .then(data => {
-                console.log(data);
+                menuDetails = data.items;
+                handleMenuRender(ulElement, menuDetails);
             })
             .catch(err => {
                 console.error(err);
             })
+        }
+
+        function handleMenuRender(ulElement, data) {
 
             // Create menu items
-            for(let i = 0; i < menuDetails.length; i++){
+            for(let i = 0; i < data.length; i++){
 
                 let liElement = document.getElementById('menu-eventos-item');
                 let imgElement = liElement.content.querySelector('.menu-item-container-img > img');
-                    imgElement.src = menuDetails[i].img;
-                
+                    imgElement.src = data[i].imagen;
+
                 let titleElement = liElement.content.querySelector('.menu-item-title');
-                    titleElement.innerText = menuDetails[i].title;
-                
+                    titleElement.innerText = data[i].title;
+
                 let priceElement = liElement.content.querySelector('.menu-item-price');
-                    priceElement.innerText = menuDetails[i].price;
-                
+                    priceElement.innerText = data[i]['menu-item-precio'];
+
                 let detailsElement = liElement.content.querySelector('.eventos-menu-details');
-                    detailsElement.innerText = menuDetails[i].details;
-                
+                    let detailsText = '';
+                    for(let j = 0; j < data[i]['menu-item-parts'].length; j++){
+                        if(j < data[i]['menu-item-parts'].length-1) {
+                            detailsText += `${data[i]['menu-item-parts'][j]}, `
+                        }else{
+                            detailsText += `${data[i]['menu-item-parts'][j]}.`
+                        }
+                    }
+                    detailsElement.innerText = detailsText;
+
                 let buttonElements = liElement.content.querySelectorAll('.eventos-quantity-btn');
-                    buttonElements[0].dataset.menuId = menuDetails[i].id;
-                    buttonElements[1].dataset.menuId = menuDetails[i].id;
-                
+                    buttonElements[0].dataset.menuId = data[i].title;
+                    buttonElements[1].dataset.menuId = data[i].title;
+
                 let labelElement = liElement.content.querySelector('.eventos-quantity-label-container label');
-                    labelElement.setAttribute('for', menuDetails[i].id);
-                
+                    labelElement.setAttribute('for', data[i].title);
+
                 let inputElement = liElement.content.querySelector('.eventos-quantity-label-container input');
-                    inputElement.setAttribute('name', `${menuDetails[i].id}uantity`)
-                    inputElement.id = menuDetails[i].id;
+                    inputElement.setAttribute('name', `${data[i].title}-quantity`)
+                    inputElement.id = data[i].title;
+                
+                calculatorValues[data[i].title] = 0;
 
                 let clone = document.importNode(liElement.content, true);
                 ulElement.appendChild(clone);
             }
+
+            menuKeys = Object.keys(calculatorValues);
+
         }
 
         function roundToTwo(num) {
