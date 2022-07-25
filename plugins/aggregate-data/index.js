@@ -4,7 +4,7 @@ const glob = require('glob');
 
 module.exports = {
 
-    onSuccess: ({ inputs, constants }) => {
+    onPostBuild: ({ inputs, constants }) => {
 
         let dataDir = `${constants.PUBLISH_DIR}/${inputs.dataDir}`;
 
