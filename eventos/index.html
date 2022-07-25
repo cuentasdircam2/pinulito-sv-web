@@ -410,8 +410,8 @@
                 <fieldset class="eventos-form-two-fields-set">
 
                     <div class="custom-field-100">
-                        <label class="form-required" for="eventos-dep">Departamento:</label>
-                        <select name="eventos-dep" id="eventos-dep" required>
+                        <label class="form-required" for="eventos-departamento">Departamento:</label>
+                        <select name="eventos-departamento" id="eventos-departamento" required>
                             <option value="ahuachapan">Ahuachapán</option>
                             <option value="cabañas">Cabañas</option>
                             <option value="chalatenango">Chalatenango</option>
@@ -438,9 +438,11 @@
                 </fieldset>
 
                 <div class="custom-field-100">
-                    <label for="eventos-notas">Notas adicionales:</label>
-                    <textarea name="eventos-notas" id="eventos-notas"></textarea>
+                    <label for="eventos-notas-adicionales">Notas adicionales:</label>
+                    <textarea name="eventos-notas-adicionales" id="eventos-notas-adicionales"></textarea>
                 </div>
+
+                <textarea name="detalles" id="eventos-detalles" hidden></textarea>
 
                 <div class="eventos-form-submit-container">
                     <input class="button_cta" id="eventos-submit-btn" title="Pedido mínimo: $100" type="submit" value="Enviar" disabled>
@@ -541,6 +543,7 @@
         }
 
         let totalSpan;
+        let eventosDetalles;
         let submitBtn;
         let menuKeys = [];
 
@@ -603,11 +606,22 @@
 
             totalSpan = document.getElementsByClassName('menu-total')[0];
 
+            eventosDetalles = document.getElementById('eventos-detalles');
+
             submitBtn = document.getElementById('eventos-submit-btn');
 
             menuKeys = Object.keys(calculatorValues)
 
             let ulElement = document.getElementsByClassName('menu-items-container')[0];
+
+            fetch('/_data/merged/menu_merged.json')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(err => {
+                console.error(err);
+            })
 
             // Create menu items
             for(let i = 0; i < menuDetails.length; i++){
