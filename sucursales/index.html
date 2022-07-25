@@ -116,6 +116,7 @@
             fetch('/_data/merged/sucursales_merged.json')
             .then(response => response.json())
             .then(data => {
+                console.log(data);
                 sucursalesDetails = data.items;
                 handleSucuesalesRender(sucursalesUl, sucursalesDetails);
             })
