@@ -14,7 +14,7 @@ module.exports = {
 
         let menuFiles = glob.sync(`${dataDir}/menu/*.json`);
         if(menuFiles) {
-            for(let i = 0; i < files.length; i++){
+            for(let i = 0; i < menuFiles.length; i++){
                 let _tempData = JSON.parse(fs.readFileSync(`${menuFiles[i]}`));
                 menuResult.items.push(_tempData);
             }
@@ -44,7 +44,7 @@ module.exports = {
         };
         let sucursalesFiles = glob.sync(`${dataDir}/sucursales/**/*.json`);
         if(sucursalesFiles) {
-            for(let i = 0; i < files.length; i++){
+            for(let i = 0; i < sucursalesFiles.length; i++){
                 let _tempData = JSON.parse(fs.readFileSync(`${sucursalesFiles[i]}`));
                 sucursalesResult[_tempData['departamento-sucursal']].push(_tempData);
             }
