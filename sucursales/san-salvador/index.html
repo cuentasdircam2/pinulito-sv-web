@@ -41,101 +41,13 @@
             <h4>Sucursales</h4>
             <ul>
 
-                <li>
-                    <a href="/sucursales/san-salvador/aguilares/">
-                        <span class="sucursal-location">Aguilares</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">3ra Avenida</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">5ta Avenida</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">Apopa</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">Ayutuxtepeque</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">Ciudad Delgado</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">La Garita</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">Mejicanos</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">Nejapa</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">Pericentro Apopa</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">San Bartolo</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">San Jacinto</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">San Marcos</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">San Martin</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">Soyapango</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="sucursal-location">Zacamil</span>
-                    </a>
-                </li>
+                <template id="sucursal_location_dep">
+                    <li>
+                        <a class="sucursal-url" href="#">
+                            <span class="sucursal-location"></span>
+                        </a>
+                    </li>
+                </template>
 
             </ul>
         </div>
@@ -172,6 +84,48 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+
+            let sucursalesUl;
+    
+            let departamento;
+    
+            window.onload = function() {
+    
+                sucursalesUl = document.getElementsByClassName('sucursales-list')[0];
+
+                departamento = (window.location.pathname).split('/')[1];
+    
+                fetch('/_data/merged/sucursales_merged.json')
+                .then(response => response.json())
+                .then(data => {
+                    handleSucuesalesRender(data);
+                })
+                .catch(err => {
+                    console.error(err);
+                })
+            }
+    
+            function handleSucuesalesRender(sucursalesDetails) {
+    
+                let sucursales = sucursalesDetails[departamento];
+    
+                sucursales.forEach(sucursalDep => {
+                    let liElement = document.getElementById('sucursal_location_dep');
+    
+                    let aElement = liElement.content.querySelector('.sucursal-url');
+                        aElement.href = `/sucursales/${departamento}/sucusal?n=${encodeURIComponent(sucursalDep.title)}`;
+    
+                    let locElement = liElement.content.querySelector('.sucursal-location');
+                        locElement.innerText = sucursalDep.title;
+    
+                    let clone = document.importNode(liElement.content, true);
+                    sucursalesUl.appendChild(clone);
+                });
+            }
+    
+        </script>
 
     </div>
 

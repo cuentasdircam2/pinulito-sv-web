@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pollo Pinulito | Menu</title>
+    <link rel="stylesheet" href="../../../css/site-wide-rules.css">
+    <link rel="stylesheet" href="../../../css/locations-shared.css">
+    <style>
+        .map-display {
+            background-image: var(--maps-desktop);
+        }
+
+
+        /* RESPONSIVE */
+        /* Mobile */
+        @media (max-width: 991.98px) {
+
+            .map-display {
+                background-image: var(--maps-mobile) !important;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <a id="skip-to-main-content" href="#main-container">Ir al contenido principal</a>
+    
+    <nav>
+        <div id="nav-logo-container">
+            <a href="/">
+                <img src="../../../assets/img/logo.png" alt="Logo">
+            </a>
+        </div>
+        <ul id="nav-links-container">
+            <li>
+                <a href="/menu/">Menu</a>
+            </li>
+            <li>
+                <a class="nav-selected" href="/sucursales/">Sucursales</a>
+            </li>
+            <li>
+                <a href="/eventos/">Eventos</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="main-container">
+        <h1 class="not-visible">Sucursales de Pinulito</h1>
+
+        <div id="locations-outer-container">
+            <h2 id="loc-title"></h2>
+        </div>
+        <div id="location-container">
+
+            <div class="location-info-container">
+
+                <div class="location-info-addr">
+                    <h4>Contacto</h4>
+                    <address>
+                        <p id="loc-addr">6ta. Calle Oriente N° 5 md Gerson Barrio El Centro, Aguilares.</p>
+                        Teléfono: <a id="loc-tel" href="tel:+50377889900">7788-9900</a>
+                    </address>
+                    <a id="loc-maps-btn-1" href="https://www.google.com/maps/search/?api=1&query=13.95761358573563,-89.186390665243" target="_blank" class="button_type_1">VER EN MAPS</a>
+                </div>
+                <div class="location-info-horario">
+                    <h4>Horario</h4>
+                    <table class="horario-table" cellspacing="0" cellpadding="0">
+                        <thead class="not-visible">
+                            <tr>
+                                <th scope="col">Día</th>
+                                <th scope="col">Horas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lunes</td>
+                                <td id="loc-horario-lunes">11:00 AM - 12:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Martes</td>
+                                <td id="loc-horario-martes">11:00 AM - 12:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Miercoles</td>
+                                <td id="loc-horario-miercoles">11:00 AM - 12:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Jueves</td>
+                                <td id="loc-horario-jueves">11:00 AM - 12:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Viernes</td>
+                                <td id="loc-horario-viernes">11:00 AM - 12:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Sabado</td>
+                                <td id="loc-horario-sabado">11:00 AM - 12:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Domingo</td>
+                                <td id="loc-horario-domingo">11:00 AM - 12:00 PM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <div id="location-map-container">
+                <div class="map-container">
+                    <div class="map-display">
+                        <a id="loc-maps-btn-2" href="https://www.google.com/maps/search/?api=1&query=13.95761358573563,-89.186390665243" target="_blank" class="button_cta btn_md">VER EN MAPS</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <footer>
+            <div class="footer-sections-container">
+                <div class="footer-section-container">
+                    <h4>Nuestra comida</h4>
+                    <ul>
+                        <li>
+                            <a href="/menu/">Menu</a>
+                        </li>
+                        <li>
+                            <a href="/sucursales/">Sucursales</a>
+                        </li>
+                        <li>
+                            <a href="/eventos/">Pinulito para eventos</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-section-container">
+                    <h4>Sigamos en contacto</h4>
+                    <ul>
+                        <li>
+                            <a href="#">Facebook</a>
+                        </li>
+                        <li>
+                            <a href="#">Instagram</a>
+                        </li>
+                        <li>
+                            <a href="#">Contáctanos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+
+            let sucursalData;
+
+            window.onload = function() {
+
+                // Get sucursal
+                const params = new Proxy(new URLSearchParams(window.location.search), {
+                    get: (searchParams, prop) => searchParams.get(prop),
+                });
+
+                let departamento = (window.location.pathname).split('/')[1];
+
+                fetch('/_data/merged/sucursales_merged.json')
+                .then(response => response.json())
+                .then(data => {
+                    
+                    let control = false;
+
+                    if(data[departamento].length == 0) handleError();
+
+                    for(let i = 0; i < data[departamento].length; i++){
+                        if(data[departamento][i].title === decodeURIComponent(params.n)) {
+                            control = true;
+                            sucursalData = data[departamento][i];
+                            return renderData();
+                        }
+                    }
+
+                    if(!control) handleError();
+
+                })
+                .catch(err => {
+                    console.error(err);
+                })
+
+            }
+
+            function renderData() {
+
+                let title = document.getElementById('loc-title');
+                let addr = document.getElementById('loc-addr');
+                let tel = document.getElementById('loc-tel');
+                let mapsBtn1 = document.getElementById('loc-maps-btn-1');
+                let mapsBtn2 = document.getElementById('loc-maps-btn-2');
+                let horarioLunes = document.getElementById('loc-horario-lunes');
+                let horarioMartes = document.getElementById('loc-horario-martes');
+                let horarioMiercoles = document.getElementById('loc-horario-miercoles');
+                let horarioJueves = document.getElementById('loc-horario-jueves');
+                let horarioViernes = document.getElementById('loc-horario-viernes');
+                let horarioSabado = document.getElementById('loc-horario-sabado');
+                let horarioDomingo = document.getElementById('loc-horario-domingo');
+                let mapDisplay = document.getElementsByClassName('map-display')[0];
+
+                title.innerText = sucursalData.title;
+                addr.innerText = sucursalData['direccion-sucursal'];
+                tel.innerText = sucursalData['telefono-sucursal'];
+                mapsBtn1.href = sucursalData['google-maps-info-sucursal']['maps-url-sucursal'];
+                mapsBtn2.href = sucursalData['google-maps-info-sucursal']['maps-url-sucursal'];
+                mapDisplay.setAttribute('style', `--maps-desktop: ${sucursalData['google-maps-info-sucursal']['mapa-url-desktop-sucursal']}; --maps-mobile: ${sucursalData['google-maps-info-sucursal']['mapa-url-mobile-sucursal']};`);
+
+                horarioLunes.innerText = `${sucursalData['horario-apertura-sucursal']['horario-apertura-lunes-sucursal']['horario-apertura-lunes-hora-sucursal']}:${sucursalData['horario-apertura-sucursal']['horario-apertura-lunes-sucursal']['horario-apertura-lunes-minutos-sucursal']} ${sucursalData['horario-apertura-sucursal']['horario-apertura-lunes-sucursal']['horario-apertura-lunes-ampm-sucursal']} - ${sucursalData['horario-cierre-sucursal']['horario-cierre-lunes-sucursal']['horario-cierre-lunes-hora-sucursal']}:${sucursalData['horario-cierre-sucursal']['horario-cierre-lunes-sucursal']['horario-cierre-lunes-minutos-sucursal']} ${sucursalData['horario-cierre-sucursal']['horario-cierre-lunes-sucursal']['horario-cierre-lunes-ampm-sucursal']}`;
+                horarioMartes.innerText = `${sucursalData['horario-apertura-sucursal']['horario-apertura-martes-sucursal']['horario-apertura-martes-hora-sucursal']}:${sucursalData['horario-apertura-sucursal']['horario-apertura-martes-sucursal']['horario-apertura-martes-minutos-sucursal']} ${sucursalData['horario-apertura-sucursal']['horario-apertura-martes-sucursal']['horario-apertura-martes-ampm-sucursal']} - ${sucursalData['horario-cierre-sucursal']['horario-cierre-martes-sucursal']['horario-cierre-martes-hora-sucursal']}:${sucursalData['horario-cierre-sucursal']['horario-cierre-martes-sucursal']['horario-cierre-martes-minutos-sucursal']} ${sucursalData['horario-cierre-sucursal']['horario-cierre-martes-sucursal']['horario-cierre-martes-ampm-sucursal']}`;
+                horarioMiercoles.innerText = `${sucursalData['horario-apertura-sucursal']['horario-apertura-miercoles-sucursal']['horario-apertura-miercoles-hora-sucursal']}:${sucursalData['horario-apertura-sucursal']['horario-apertura-miercoles-sucursal']['horario-apertura-miercoles-minutos-sucursal']} ${sucursalData['horario-apertura-sucursal']['horario-apertura-miercoles-sucursal']['horario-apertura-miercoles-ampm-sucursal']} - ${sucursalData['horario-cierre-sucursal']['horario-cierre-miercoles-sucursal']['horario-cierre-miercoles-hora-sucursal']}:${sucursalData['horario-cierre-sucursal']['horario-cierre-miercoles-sucursal']['horario-cierre-miercoles-minutos-sucursal']} ${sucursalData['horario-cierre-sucursal']['horario-cierre-miercoles-sucursal']['horario-cierre-miercoles-ampm-sucursal']}`;
+                horarioJueves.innerText = `${sucursalData['horario-apertura-sucursal']['horario-apertura-jueves-sucursal']['horario-apertura-jueves-hora-sucursal']}:${sucursalData['horario-apertura-sucursal']['horario-apertura-jueves-sucursal']['horario-apertura-jueves-minutos-sucursal']} ${sucursalData['horario-apertura-sucursal']['horario-apertura-jueves-sucursal']['horario-apertura-jueves-ampm-sucursal']} - ${sucursalData['horario-cierre-sucursal']['horario-cierre-jueves-sucursal']['horario-cierre-jueves-hora-sucursal']}:${sucursalData['horario-cierre-sucursal']['horario-cierre-jueves-sucursal']['horario-cierre-jueves-minutos-sucursal']} ${sucursalData['horario-cierre-sucursal']['horario-cierre-jueves-sucursal']['horario-cierre-jueves-ampm-sucursal']}`;
+                horarioViernes.innerText = `${sucursalData['horario-apertura-sucursal']['horario-apertura-viernes-sucursal']['horario-apertura-viernes-hora-sucursal']}:${sucursalData['horario-apertura-sucursal']['horario-apertura-viernes-sucursal']['horario-apertura-viernes-minutos-sucursal']} ${sucursalData['horario-apertura-sucursal']['horario-apertura-viernes-sucursal']['horario-apertura-viernes-ampm-sucursal']} - ${sucursalData['horario-cierre-sucursal']['horario-cierre-viernes-sucursal']['horario-cierre-viernes-hora-sucursal']}:${sucursalData['horario-cierre-sucursal']['horario-cierre-viernes-sucursal']['horario-cierre-viernes-minutos-sucursal']} ${sucursalData['horario-cierre-sucursal']['horario-cierre-viernes-sucursal']['horario-cierre-viernes-ampm-sucursal']}`;
+                horarioSabado.innerText = `${sucursalData['horario-apertura-sucursal']['horario-apertura-sabado-sucursal']['horario-apertura-sabado-hora-sucursal']}:${sucursalData['horario-apertura-sucursal']['horario-apertura-sabado-sucursal']['horario-apertura-sabado-minutos-sucursal']} ${sucursalData['horario-apertura-sucursal']['horario-apertura-sabado-sucursal']['horario-apertura-sabado-ampm-sucursal']} - ${sucursalData['horario-cierre-sucursal']['horario-cierre-sabado-sucursal']['horario-cierre-sabado-hora-sucursal']}:${sucursalData['horario-cierre-sucursal']['horario-cierre-sabado-sucursal']['horario-cierre-sabado-minutos-sucursal']} ${sucursalData['horario-cierre-sucursal']['horario-cierre-sabado-sucursal']['horario-cierre-sabado-ampm-sucursal']}`;
+                horarioDomingo.innerText = `${sucursalData['horario-apertura-sucursal']['horario-apertura-domingo-sucursal']['horario-apertura-domingo-hora-sucursal']}:${sucursalData['horario-apertura-sucursal']['horario-apertura-domingo-sucursal']['horario-apertura-domingo-minutos-sucursal']} ${sucursalData['horario-apertura-sucursal']['horario-apertura-domingo-sucursal']['horario-apertura-domingo-ampm-sucursal']} - ${sucursalData['horario-cierre-sucursal']['horario-cierre-domingo-sucursal']['horario-cierre-domingo-hora-sucursal']}:${sucursalData['horario-cierre-sucursal']['horario-cierre-domingo-sucursal']['horario-cierre-domingo-minutos-sucursal']} ${sucursalData['horario-cierre-sucursal']['horario-cierre-domingo-sucursal']['horario-cierre-domingo-ampm-sucursal']}`;
+
+            }
+
+            function handleError() {
+                return alert(`La sucursal solicitada no existe.`);
+            }
+
+        </script>
+
+    </div>
+
+</body>
+</html>
