@@ -29,6 +29,7 @@ collections:
     extension: "json"
     slug: "{{title}}"
     fields:
+      - {label: "Departamento", name: "departamento-sucursal", widget: "hidden", default: "ahuachapan"}
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
@@ -177,6 +178,7 @@ collections:
     extension: "json"
     slug: "{{title}}"
     fields:
+      - {label: "Departamento", name: "departamento-sucursal", widget: "hidden", default: "cabanas"}
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
@@ -325,6 +327,7 @@ collections:
     extension: "json"
     slug: "{{title}}"
     fields:
+      - {label: "Departamento", name: "departamento-sucursal", widget: "hidden", default: "chalatenango"}
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
@@ -473,6 +476,7 @@ collections:
     extension: "json"
     slug: "{{title}}"
     fields:
+      - {label: "Departamento", name: "departamento-sucursal", widget: "hidden", default: "cuscatlan"}
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
@@ -621,6 +625,7 @@ collections:
     extension: "json"
     slug: "{{title}}"
     fields:
+      - {label: "Departamento", name: "departamento-sucursal", widget: "hidden", default: "la-libertad"}
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
@@ -769,6 +774,7 @@ collections:
     extension: "json"
     slug: "{{title}}"
     fields:
+      - {label: "Departamento", name: "departamento-sucursal", widget: "hidden", default: "la-paz"}
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
@@ -917,6 +923,7 @@ collections:
     extension: "json"
     slug: "{{title}}"
     fields:
+      - {label: "Departamento", name: "departamento-sucursal", widget: "hidden", default: "la-union"}
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
@@ -1065,6 +1072,7 @@ collections:
     extension: "json"
     slug: "{{title}}"
     fields:
+      - {label: "Departamento", name: "departamento-sucursal", widget: "hidden", default: "morazan"}
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
@@ -1213,6 +1221,7 @@ collections:
     extension: "json"
     slug: "{{title}}"
     fields:
+      - {label: "Departamento", name: "departamento-sucursal", widget: "hidden", default: "san-miguel"}
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
@@ -1361,6 +1370,7 @@ collections:
     extension: "json"
     slug: "{{title}}"
     fields:
+      - {label: "Departamento", name: "departamento-sucursal", widget: "hidden", default: "san-salvador"}
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
@@ -1509,6 +1519,7 @@ collections:
     extension: "json"
     slug: "{{title}}"
     fields:
+      - {label: "Departamento", name: "departamento-sucursal", widget: "hidden", default: "san-vicente"}
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
@@ -1657,6 +1668,7 @@ collections:
     extension: "json"
     slug: "{{title}}"
     fields:
+      - {label: "Departamento", name: "departamento-sucursal", widget: "hidden", default: "santa-ana"}
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
@@ -1805,6 +1817,7 @@ collections:
     extension: "json"
     slug: "{{title}}"
     fields:
+      - {label: "Departamento", name: "departamento-sucursal", widget: "hidden", default: "sonsonate"}
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
@@ -1953,6 +1966,7 @@ collections:
     extension: "json"
     slug: "{{title}}"
     fields:
+      - {label: "Departamento", name: "departamento-sucursal", widget: "hidden", default: "usulutan"}
       - {label: "Nombre de la sucursal", name: "title", widget: "string"}
       - {label: "Dirección", name: "direccion-sucursal", widget: "text"}
       - {label: "Teléfono", name: "telefono-sucursal", widget: "string", default: "2233-4455"}
