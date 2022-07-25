@@ -4,9 +4,9 @@ const glob = require('glob');
 
 module.exports = {
 
-    onSuccess: ({ inputs }) => {
+    onSuccess: ({ inputs, constants }) => {
 
-        let dataDir = inputs.dataDir;
+        let dataDir = `${constants.PUBLISH_DIR}/${inputs.dataDir}`;
 
         // Aggregate menu
         let menuResult = {
