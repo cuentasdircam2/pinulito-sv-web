@@ -6,7 +6,8 @@ module.exports = {
 
     onPostBuild: ({ inputs, constants }) => {
 
-        let dataDir = `${constants.PUBLISH_DIR}/${inputs.dataDir}`;
+        let dataDir = `${inputs.dataDir}`;
+        console.log(constants);
         console.log(dataDir);
 
         // Aggregate menu
@@ -14,14 +15,20 @@ module.exports = {
             items: []
         };
         glob(`${dataDir}/menu/*.json`, function (err, files) {
+            console.log('inside glob');
             if(!err) {
+                console.log('inside glob - no err');
                 if(files) {
+                    console.log('inside glob - no err - files');
                     for(let i = 0; i < files.length; i++){
                         console.log(files[i]);
                         menuResult.items.push(JSON.parse(fs.readFileSync(`${dataDir}/menu/${files[i]}`)));
                     }
+                }else{
+                    console.log('inside glob - no err - no files');
                 }
             }else{
+                console.log('inside glob - yes err');
                 console.error(err);
             }
         })
