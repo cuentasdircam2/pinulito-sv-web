@@ -30,7 +30,7 @@ module.exports = {
             console.log('inside glob - no err - files');
             for(let i = 0; i < files.length; i++){
                 console.log(files[i]);
-                let _tempData = fs.readFileSync(`${dataDir}/menu/${files[i]}`);
+                let _tempData = fs.readFileSync(`${files[i]}`);
                 menuResult.items.push(JSON.parse(_tempData));
             }
         }else{
