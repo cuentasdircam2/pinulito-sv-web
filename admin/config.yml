@@ -3,26 +3,6 @@ backend:
   branch: main # Branch to update (optional; defaults to master)
 media_folder: "assets/img/uploads" # Media files will be stored in the repo under images/uploads
 collections:
-  - name: "menu-inicio"
-    label: "Menu de inicio"
-    folder: "_data/menu-inicio"
-    create: false
-    extension: "json"
-    slug: "{{year}}-{{month}}-{{day}}_{{title}}"
-    fields:
-      - {label: "Nombre", name: "title", widget: "hidden", default: "Combos del inicio"}
-      - label: "Lista de combos"
-        name: "combos-list-inicio"
-        widget: "list"
-        allow_add: true
-        fields:
-          - label: "Combo"
-            name: "combos-list-inicio-item"
-            widget: "relation"
-            collection: "menu"
-            search_fields: ["title"]
-            value_field: "{{slug}}"
-            display_fields: ["title"]
   - name: "menu"
     label: "Menu"
     folder: "_data/menu"
