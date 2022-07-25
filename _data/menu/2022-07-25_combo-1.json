@@ -1,0 +1,18 @@
+{
+  "menu-item-is-extra": false,
+  "imagen": "/assets/img/uploads/logo_single.png",
+  "title": "Combo 1",
+  "menu-item-desc": "Prueba",
+  "menu-item-precio": "3.75",
+  "menu-item-parts": [
+    {
+      "menu-item-part-name": "5 piezas"
+    },
+    {
+      "menu-item-part-name": "2 panes"
+    },
+    {
+      "menu-item-part-name": "ensalada"
+    }
+  ]
+}
