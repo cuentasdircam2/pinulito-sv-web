@@ -48,16 +48,12 @@ module.exports = {
         // })
 
         console.log(menuResult);
-        if (fs.existsSync(`${dataDir}/merged`)) {
-            fs.writeFileSync(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult));
-            console.log(menuResult);
-            console.log('menu merged');
-        }else{
+        if (!fs.existsSync(`${dataDir}/merged`)) {
             fs.mkdirSync(`${dataDir}/merged`);
-            fs.writeFileSync(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult));
-            console.log(menuResult);
-            console.log('menu merged');
         }
+
+        fs.writeFileSync(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult));
+        console.log('menu merged');
         // fs.writeFile(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult), { encoding: 'utf8' }, err => {
         //     if(!err) {
         //         console.log('menu merged');
