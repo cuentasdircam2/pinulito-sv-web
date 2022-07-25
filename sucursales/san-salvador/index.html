@@ -95,7 +95,7 @@
     
                 sucursalesUl = document.getElementsByClassName('sucursales-list')[0];
 
-                departamento = (window.location.pathname).split('/')[1];
+                departamento = (window.location.pathname).split('/')[2];
     
                 fetch('/_data/merged/sucursales_merged.json')
                 .then(response => response.json())

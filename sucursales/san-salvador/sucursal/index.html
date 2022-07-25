@@ -164,7 +164,7 @@
                     get: (searchParams, prop) => searchParams.get(prop),
                 });
 
-                let departamento = (window.location.pathname).split('/')[1];
+                let departamento = (window.location.pathname).split('/')[2];
 
                 fetch('/_data/merged/sucursales_merged.json')
                 .then(response => response.json())
