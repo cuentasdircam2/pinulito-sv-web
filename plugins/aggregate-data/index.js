@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const glob = require('glob');
 
 module.exports = {
@@ -23,15 +24,17 @@ module.exports = {
             }
         })
 
-        fs.writeFileSync(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult), { encoding: 'utf8' })
-        utils.status.show({
-            // Required.
-            summary: 'Menu merged successfully',
-            // Optional. Empty by default.
-            text: 'Menu merged',
-        });
-        console.log(menuResult);
-        console.log('menu merged');
+        if(ensureDirectoryExistence(`${dataDir}/merged/menu_merged.json`)){
+            fs.writeFileSync(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult), { encoding: 'utf8' })
+            utils.status.show({
+                // Required.
+                summary: 'Menu merged successfully',
+                // Optional. Empty by default.
+                text: 'Menu merged',
+            });
+            console.log(menuResult);
+            console.log('menu merged');
+        }
         // fs.writeFile(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult), { encoding: 'utf8' }, err => {
         //     if(!err) {
         //         console.log('menu merged');
@@ -41,4 +44,13 @@ module.exports = {
         // })
     },
 
+}
+
+function ensureDirectoryExistence(filePath) {
+    let dirname = path.dirname(filePath);
+    if (fs.existsSync(dirname)) {
+        return true;
+    }
+    ensureDirectoryExistence(dirname);
+    fs.mkdirSync(dirname);
 }
