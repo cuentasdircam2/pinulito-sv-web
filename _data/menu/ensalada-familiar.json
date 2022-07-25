@@ -1,6 +1,7 @@
 {
   "menu-item-is-extra": true,
   "imagen": "/assets/img/uploads/logo_single.png",
+  "imagen-thumb": "/assets/img/uploads/logo_single.png",
   "title": "Ensalada Familiar",
   "menu-item-desc": "La misma ensalada que tanto te gusta, ¡pero ahora para toda la familia!",
   "menu-item-precio": "3.50",

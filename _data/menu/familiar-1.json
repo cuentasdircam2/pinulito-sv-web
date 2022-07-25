@@ -1,6 +1,7 @@
 {
   "menu-item-is-extra": false,
   "imagen": "/assets/img/uploads/logo_single.png",
+  "imagen-thumb": "/assets/img/uploads/logo_single.png",
   "title": "Familiar 1",
   "menu-item-desc": "Disfruta de pollo Pinulito en familia. Este combo incluye cinco piezas de pollo, dos papas y dos ensaladas ¡y el mejor sabor!",
   "menu-item-precio": "8.95",

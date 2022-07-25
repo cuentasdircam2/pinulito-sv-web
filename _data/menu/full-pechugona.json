@@ -1,6 +1,7 @@
 {
   "menu-item-is-extra": false,
   "imagen": "/assets/img/uploads/logo_single.png",
+  "imagen-thumb": "/assets/img/uploads/logo_single.png",
   "title": "Full Pechugona",
   "menu-item-desc": "¿Con ganas de una pechuga? ¡este el tu combo! incluye una pechuga, una papa, una ensalada, dos panes y una soda.",
   "menu-item-precio": "14.75",

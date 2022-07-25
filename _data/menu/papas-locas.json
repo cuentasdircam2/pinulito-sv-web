@@ -1,6 +1,7 @@
 {
   "menu-item-is-extra": false,
   "imagen": "/assets/img/uploads/logo_single.png",
+  "imagen-thumb": "/assets/img/uploads/logo_single.png",
   "title": "Papas locas",
   "menu-item-desc": "Deliciosas papas locas con los más ricos aderezos.",
   "menu-item-precio": "1.95",

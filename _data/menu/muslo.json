@@ -1,6 +1,7 @@
 {
   "menu-item-is-extra": true,
   "imagen": "/assets/img/uploads/logo_single.png",
+  "imagen-thumb": "/assets/img/uploads/logo_single.png",
   "title": "Muslo",
   "menu-item-desc": "1 muslo",
   "menu-item-precio": "1.35",
