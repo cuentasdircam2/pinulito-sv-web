@@ -4,7 +4,7 @@ const glob = require('glob');
 
 module.exports = {
 
-    onPostBuild: ({ inputs, constants }) => {
+    async onPostBuild({ inputs, constants }) {
 
         let dataDir = `${inputs.dataDir}`;
         console.log(constants);
@@ -22,7 +22,8 @@ module.exports = {
                     console.log('inside glob - no err - files');
                     for(let i = 0; i < files.length; i++){
                         console.log(files[i]);
-                        menuResult.items.push(JSON.parse(fs.readFileSync(`${dataDir}/menu/${files[i]}`)));
+                        let _tempData = await fs.readFileSync(`${dataDir}/menu/${files[i]}`);
+                        menuResult.items.push(JSON.parse(_tempData));
                     }
                 }else{
                     console.log('inside glob - no err - no files');
@@ -34,7 +35,7 @@ module.exports = {
         })
 
         if(ensureDirectoryExistence(`${dataDir}/merged/menu_merged.json`)){
-            fs.writeFileSync(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult));
+            await fs.writeFileSync(`${dataDir}/merged/menu_merged.json`, JSON.stringify(menuResult));
             console.log(menuResult);
             console.log('menu merged');
         }
@@ -49,11 +50,11 @@ module.exports = {
 
 }
 
-function ensureDirectoryExistence(filePath) {
+async function ensureDirectoryExistence(filePath) {
     let dirname = path.dirname(filePath);
-    if (fs.existsSync(dirname)) {
+    if (await fs.existsSync(dirname)) {
         return true;
     }
     ensureDirectoryExistence(dirname);
-    fs.mkdirSync(dirname);
+    await fs.mkdirSync(dirname);
 }
