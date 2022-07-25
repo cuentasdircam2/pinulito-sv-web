@@ -6,6 +6,7 @@ collections:
   - name: "menu-inicio"
     label: "Menu de inicio"
     folder: "_data/menu-inicio"
+    create: true
     extension: "json"
     slug: "{{year}}-{{month}}-{{day}}_{{title}}"
     fields:
