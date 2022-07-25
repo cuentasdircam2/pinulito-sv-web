@@ -6,7 +6,7 @@ collections:
   - name: "menu-inicio"
     label: "Menu de inicio"
     folder: "_data/menu-inicio"
-    create: true
+    create: false
     extension: "json"
     slug: "{{year}}-{{month}}-{{day}}_{{title}}"
     fields:
@@ -22,7 +22,7 @@ collections:
             collection: "menu"
             search_fields: ["title"]
             value_field: "{{slug}}"
-            display_fields: ["title", "menu-item-precio"]
+            display_fields: ["title"]
   - name: "menu"
     label: "Menu"
     folder: "_data/menu"
