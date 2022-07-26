@@ -9,7 +9,7 @@ module.exports = {
 
     onPostBuild: async ({ inputs }) => {
 
-        console.log('Starting to process images')
+        console.log('Starting to process images');
 
         const imagesDir = `${inputs.dataDir}`;
 
@@ -23,7 +23,8 @@ module.exports = {
         // Make sure the webp converter has a temp directory
         if (!fs.existsSync('./node_modules/webp-converter/temp')) {
             fs.mkdirSync('./node_modules/webp-converter/temp');
-            console.log(`Directory: ./node_modules/webp-converter/temp created`)
+
+            console.log(`Directory: ./node_modules/webp-converter/temp created`);
         }
 
         // Now filter them and save only the images that have no webp equivalent
@@ -72,24 +73,29 @@ module.exports = {
 
         // Now, delete unused webps
         if(webpToRemoveList.length > 0){
-            console.log('Deleting unused webp images')
+            console.log('Deleting unused webp images');
+
             for(let i = 0; i < webpToRemoveList.length; i++){
                 fs.rmSync(webpToRemoveList[i]);
             }
-            console.log('Finished deleting unused webp images')
+
+            console.log('Finished deleting unused webp images');
         }
 
         // Now, convert normal imgs to webp
         if(imgToWebpList.length > 0){
             console.log('Converting normal images to webp');
+
             for(let i = 0; i < imgToWebpList.length; i++){
                 let fileExtension = (path.parse(imgToWebpList[i]).ext).replace('.', '');
+                
                 await webp.buffer2webpbuffer(fs.readFileSync(imgToWebpList[i]), fileExtension, '-q 80')
                 .then(res => {
                     let newFileName = imgToWebpList[i].replace(fileExtension, 'webp');
                     fs.writeFileSync(newFileName, res);
                 });
             }
+
             console.log('Finished converting normal images to webp');
         }
 
