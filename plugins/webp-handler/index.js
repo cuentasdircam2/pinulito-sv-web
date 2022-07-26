@@ -103,7 +103,7 @@ module.exports = {
                     let newFileName = imgToWebpList[i].replace(fileExtension, 'webp');
                     fs.writeFileSync(newFileName, bufferResult);
                     filesToCache.push(newFileName);
-                    console.log(`Converted: ${newFileName}`)
+                    console.log(`Converted: ${newFileName}`);
                 }
             }
 
