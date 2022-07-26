@@ -97,7 +97,7 @@ module.exports = {
                     let fileExtension = (path.parse(imgToWebpList[i]).ext).replace('.', '');
                 
                     await webp.buffer2webpbuffer(fs.readFileSync(imgToWebpList[i]), fileExtension, '-q 80')
-                    .then(res => {
+                    .then(async function(res) {
                         let newFileName = imgToWebpList[i].replace(fileExtension, 'webp');
                         fs.writeFileSync(newFileName, res);
                         await utils.cache.save(newFileName);
