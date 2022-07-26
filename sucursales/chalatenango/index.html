@@ -90,13 +90,30 @@
             let sucursalesUl;
     
             let departamento;
+
+            let sucursalesDic = {
+                'ahuachapan': 'Ahuachapán',
+                'cabanas': 'Cabañas',
+                'chalatenango': 'Chalatenango',
+                'cuscatlan': 'Cuscatlán',
+                'la-libertad': 'La Libertad',
+                'la-paz': 'La Paz',
+                'la-union': 'La Unión',
+                'morazan': 'Morazán',
+                'san-miguel': 'San Miguel',
+                'san-salvador': 'San Salvador',
+                'san-vicente': 'San Vicente',
+                'sana-ana': 'Santa Ana',
+                'sonsonate': 'Sonsonate',
+                'usulutan': 'Usulutan',
+            }
     
             window.onload = function() {
     
                 sucursalesUl = document.getElementsByClassName('sucursales-list')[0];
 
                 departamento = (window.location.pathname).split('/')[2];
-                document.getElementsByTagName('title')[0].innerText = `Sucursales en ${departamento} | Pollo Pinulito`;
+                document.getElementsByTagName('title')[0].innerText = `Sucursales en ${sucursalesDic[departamento]} | Pollo Pinulito`;
     
                 fetch('/_data/merged/sucursales_merged.json')
                 .then(response => response.json())
