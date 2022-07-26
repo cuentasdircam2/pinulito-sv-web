@@ -200,7 +200,7 @@
         @media (max-width: 991.98px) {
 
             header {
-                padding: 2rem 1rem !important;
+                padding: 2rem 0 !important;
                 flex-direction: column-reverse;
             }
 
@@ -396,7 +396,7 @@
             for(let i = 0; i < data.length; i++){
 
                 let liElement = document.getElementById('menu-item-template');
-                
+
                 let imgElement = liElement.content.querySelector('.menu-item-container-img > img');
                     imgElement.src = data[i]['imagen-thumb'];
                     imgElement.alt = data[i].title;
