@@ -5,9 +5,11 @@ const webp = require('webp-converter');
 
 webp.grant_permission();
 
+let filesToCache = [];
+
 module.exports = {
 
-    onPostBuild: async ({ inputs, utils }) => {
+    onPreBuild: async ({ inputs, utils }) => {
 
         console.log('-- Starting to process images --');
 
@@ -100,16 +102,22 @@ module.exports = {
                     .then(async function(res) {
                         let newFileName = imgToWebpList[i].replace(fileExtension, 'webp');
                         fs.writeFileSync(newFileName, res);
-                        await utils.cache.save(newFileName);
-                        console.log(`Converted and cached: ${newFileName}`)
+                        filesToCache.push(newFileName);
+                        console.log(`Converted: ${newFileName}`)
                     });
                 }
             }
 
             console.log('-- Finished converting normal images to webp --');
         }
+    },
+    onPostBuild: async ({ utils }) => {
+        filesToCache.forEach(filePath => {
+            await utils.cache.save(filePath);
+            console.log(`Cached: ${filePath}`);
+        });
 
         console.log('-- Images processed --');
-    },
+    }
 
 }
