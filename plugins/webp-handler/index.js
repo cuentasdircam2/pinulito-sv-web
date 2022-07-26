@@ -111,8 +111,8 @@ module.exports = {
             console.log('-- Finished converting normal images to webp --');
         }
     },
-    onPostBuild: async function({ utils }) {
-        filesToCache.forEach(filePath => {
+    onPostBuild: async ({ utils }) => {
+        filesToCache.forEach(async function(filePath){
             await utils.cache.save(filePath);
             console.log(`Cached: ${filePath}`);
         });
