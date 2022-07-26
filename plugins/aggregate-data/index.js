@@ -18,9 +18,9 @@ module.exports = {
                 let _tempData = JSON.parse(fs.readFileSync(`${menuFiles[i]}`));
                 menuResult.items.push(_tempData);
             }
-            console.log('Menu merged.');
+            console.log('Menu merged');
         }else{
-            console.log('No menu files to merge.');
+            console.log('No menu files to merge');
         }
         // END Aggregate menu
 
@@ -48,9 +48,9 @@ module.exports = {
                 let _tempData = JSON.parse(fs.readFileSync(`${sucursalesFiles[i]}`));
                 sucursalesResult[_tempData['departamento-sucursal']].push(_tempData);
             }
-            console.log('Sucursales merged.');
+            console.log('Sucursales merged');
         }else{
-            console.log('No sucursales files to merge.');
+            console.log('No sucursales files to merge');
         }
         // END Aggregate sucursales
 
