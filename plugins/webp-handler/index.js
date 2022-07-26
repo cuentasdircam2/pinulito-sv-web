@@ -7,9 +7,9 @@ webp.grant_permission();
 
 module.exports = {
 
-    onPostBuild: async ({ inputs }) => {
+    onPostBuild: async ({ inputs, utils }) => {
 
-        console.log('Starting to process images');
+        console.log('-- Starting to process images --');
 
         const imagesDir = `${inputs.dataDir}`;
 
@@ -73,33 +73,43 @@ module.exports = {
 
         // Now, delete unused webps
         if(webpToRemoveList.length > 0){
-            console.log('Deleting unused webp images');
+            console.log('-- Deleting unused webp images --');
 
             for(let i = 0; i < webpToRemoveList.length; i++){
                 fs.rmSync(webpToRemoveList[i]);
+                await utils.cache.remove(webpToRemoveList[i]);
+                console.log(`Deleted and removed from cache: ${webpToRemoveList[i]}`);
             }
 
-            console.log('Finished deleting unused webp images');
+            console.log('-- Finished deleting unused webp images --');
         }
 
         // Now, convert normal imgs to webp
         if(imgToWebpList.length > 0){
-            console.log('Converting normal images to webp');
+            console.log('-- Converting normal images to webp --');
 
             for(let i = 0; i < imgToWebpList.length; i++){
-                let fileExtension = (path.parse(imgToWebpList[i]).ext).replace('.', '');
+
+                if ( await utils.cache.has(imgToWebpList[i]) ) {
+                    await utils.cache.restore(imgToWebpList[i]);
+                    console.log(`Restored from cache: ${imgToWebpList[i]}`);
+                }else{
+                    let fileExtension = (path.parse(imgToWebpList[i]).ext).replace('.', '');
                 
-                await webp.buffer2webpbuffer(fs.readFileSync(imgToWebpList[i]), fileExtension, '-q 80')
-                .then(res => {
-                    let newFileName = imgToWebpList[i].replace(fileExtension, 'webp');
-                    fs.writeFileSync(newFileName, res);
-                });
+                    await webp.buffer2webpbuffer(fs.readFileSync(imgToWebpList[i]), fileExtension, '-q 80')
+                    .then(res => {
+                        let newFileName = imgToWebpList[i].replace(fileExtension, 'webp');
+                        fs.writeFileSync(newFileName, res);
+                        await utils.cache.save(newFileName);
+                        console.log(`Converted and cached: ${newFileName}`)
+                    });
+                }
             }
 
-            console.log('Finished converting normal images to webp');
+            console.log('-- Finished converting normal images to webp --');
         }
 
-        console.log('Images processed');
+        console.log('-- Images processed --');
     },
 
 }
