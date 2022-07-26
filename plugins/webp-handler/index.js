@@ -92,15 +92,16 @@ module.exports = {
 
             for(let i = 0; i < imgToWebpList.length; i++){
 
-                if ( await utils.cache.has(imgToWebpList[i]) ) {
-                    await utils.cache.restore(imgToWebpList[i]);
-                    console.log(`Restored from cache: ${imgToWebpList[i]}`);
+                let fileExtension = (path.parse(imgToWebpList[i]).ext).replace('.', '');
+                let newFileName = imgToWebpList[i].replace(fileExtension, 'webp');
+
+                if ( await utils.cache.has(newFileName) ) {
+                    await utils.cache.restore(newFileName);
+                    console.log(`Restored from cache: ${newFileName}`);
                 }else{
-                    let fileExtension = (path.parse(imgToWebpList[i]).ext).replace('.', '');
+                    
                 
                     let bufferResult = await webp.buffer2webpbuffer(fs.readFileSync(imgToWebpList[i]), fileExtension, '-q 80');
-
-                    let newFileName = imgToWebpList[i].replace(fileExtension, 'webp');
                     fs.writeFileSync(newFileName, bufferResult);
                     filesToCache.push(newFileName);
                     console.log(`Converted: ${newFileName}`);
