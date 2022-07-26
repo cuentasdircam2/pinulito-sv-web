@@ -99,7 +99,7 @@ module.exports = {
                     let fileExtension = (path.parse(imgToWebpList[i]).ext).replace('.', '');
                 
                     await webp.buffer2webpbuffer(fs.readFileSync(imgToWebpList[i]), fileExtension, '-q 80')
-                    .then(async function(res) {
+                    .then(res => {
                         let newFileName = imgToWebpList[i].replace(fileExtension, 'webp');
                         fs.writeFileSync(newFileName, res);
                         filesToCache.push(newFileName);
@@ -111,7 +111,7 @@ module.exports = {
             console.log('-- Finished converting normal images to webp --');
         }
     },
-    onPostBuild: async ({ utils }) => {
+    onPostBuild: async function({ utils }) {
         filesToCache.forEach(filePath => {
             await utils.cache.save(filePath);
             console.log(`Cached: ${filePath}`);
