@@ -20,6 +20,12 @@ module.exports = {
         let normalImages = glob.sync(`${imagesDir}/*.{png,jpg}`);
         let webpImages = glob.sync(`${imagesDir}/*.webp`);
 
+        // Make sure the webp converter has a temp directory
+        if (!fs.existsSync('./node_modules/webp-converter/temp')) {
+            fs.mkdirSync('./node_modules/webp-converter/temp');
+            console.log(`Directory: ./node_modules/webp-converter/temp created`)
+        }
+
         // Now filter them and save only the images that have no webp equivalent
         if(normalImages.length > 0){
             for(let i = 0; i < normalImages.length; i++){
