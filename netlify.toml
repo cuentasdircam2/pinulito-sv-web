@@ -3,3 +3,9 @@ package = "/plugins/aggregate-data"
     [plugins.inputs]
       # Where should data files reside
       dataDir = "_data"
+
+[[plugins]]
+package = "/plugins/webp-handler"
+    [plugins.inputs]
+      # Where should data files reside
+      dataDir = "assets/img/uploads"

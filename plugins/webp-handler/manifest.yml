@@ -1,0 +1,4 @@
+name: webp-handler
+inputs:
+  - name: dataDir
+    required: true

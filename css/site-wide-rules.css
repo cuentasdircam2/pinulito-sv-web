@@ -17,6 +17,7 @@
     font-family: 'Heebo';
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: url('../assets/fonts/heebo-v20-latin-regular.eot');
     /* IE9 Compat Modes */
     src: local(''),
@@ -37,6 +38,7 @@
     font-family: 'Heebo';
     font-style: normal;
     font-weight: 700;
+    font-display: swap;
     src: url('../assets/fonts/heebo-v20-latin-700.eot');
     /* IE9 Compat Modes */
     src: local(''),
@@ -57,6 +59,7 @@
     font-family: 'Bangers';
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: url('../assets/fonts/bangers-v20-latin-regular.eot');
     /* IE9 Compat Modes */
     src: local(''),

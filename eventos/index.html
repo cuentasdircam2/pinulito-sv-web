@@ -564,7 +564,7 @@
                 }
             }
             totalAmount = roundToTwo(totalAmount);
-            finalDetalles += `\nTotal (estimado):$ ${totalAmount}`;
+            finalDetalles += `\nTotal (estimado): $${totalAmount}`;
             totalSpan.innerText = `Total (estimado): $${totalAmount}`;
             submitBtn.disabled = !(totalAmount >= 100);
             submitBtn.title = !(totalAmount >= 100) ? 'Pedido mínimo: $100' : 'Enviar solicitud de pedido';
