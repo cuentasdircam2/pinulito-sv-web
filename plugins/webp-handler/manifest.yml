@@ -2,3 +2,5 @@ name: webp-handler
 inputs:
   - name: dataDir
     required: true
+  - name: ttl
+    required: true

@@ -9,3 +9,4 @@ package = "/plugins/webp-handler"
     [plugins.inputs]
       # Where should data files reside
       dataDir = "assets/img/uploads"
+      ttl = 2592000

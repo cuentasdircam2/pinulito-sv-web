@@ -98,9 +98,8 @@ module.exports = {
                 if ( await utils.cache.has(newFileName) ) {
                     await utils.cache.restore(newFileName);
                     console.log(`Restored from cache: ${newFileName}`);
+
                 }else{
-                    
-                
                     let bufferResult = await webp.buffer2webpbuffer(fs.readFileSync(imgToWebpList[i]), fileExtension, '-q 80');
                     fs.writeFileSync(newFileName, bufferResult);
                     filesToCache.push(newFileName);
@@ -111,10 +110,10 @@ module.exports = {
             console.log('-- Finished converting normal images to webp --');
         }
     },
-    onPostBuild: async ({ utils }) => {
+    onPostBuild: async ({ inputs, utils }) => {
         if(filesToCache.length > 0){
             for(let i = 0; i < filesToCache.length; i++){
-                await utils.cache.save(filesToCache[i]);
+                await utils.cache.save(filesToCache[i], { ttl: inputs.ttl });
                 console.log(`Cached: ${filesToCache[i]}`);
             }
         }
