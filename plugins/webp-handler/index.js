@@ -112,9 +112,11 @@ module.exports = {
         }
     },
     onPostBuild: async ({ utils }) => {
-        for(let i = 0; i < filesToCache.length; i++){
-            await utils.cache.save(filesToCache[i]);
-            console.log(`Cached: ${filesToCache[i]}`);
+        if(filesToCache.length > 0){
+            for(let i = 0; i < filesToCache.length; i++){
+                await utils.cache.save(filesToCache[i]);
+                console.log(`Cached: ${filesToCache[i]}`);
+            }
         }
 
         console.log('-- Images processed --');

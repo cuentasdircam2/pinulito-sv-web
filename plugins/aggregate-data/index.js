@@ -3,7 +3,7 @@ const glob = require('glob');
 
 module.exports = {
 
-    onPostBuild: ({ inputs }) => {
+    onPreBuild: ({ inputs }) => {
 
         let dataDir = `${inputs.dataDir}`;
 
