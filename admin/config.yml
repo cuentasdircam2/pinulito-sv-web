@@ -10,7 +10,7 @@ collections:
     extension: "json"
     slug: "{{title}}"
     fields:
-      - {label: "Imagen (1024 x 1024)", name: "imagen", widget: "image", allow_multiple: false, choose_url: false}
+      - {label: "Imagen (512 x 512)", name: "imagen", widget: "image", allow_multiple: false, choose_url: false}
       - {label: "Imagen (256 x 256)", name: "imagen-thumb", widget: "image", allow_multiple: false, choose_url: false}
       - {label: "Nombre", name: "title", widget: "string"}
       - {label: "Descripción", name: "menu-item-desc", widget: "text"}

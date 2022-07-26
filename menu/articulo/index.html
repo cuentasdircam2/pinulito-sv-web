@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Articulo | Pollo Pinulito</title>
+    <meta id="meta-desc" name="description" content="">
     <link rel="stylesheet" href="../../css/site-wide-rules.css">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
@@ -273,6 +274,8 @@
                     break;
                 }
             }
+
+            document.getElementById('meta-desc').setAttribute('content', data[itemIndex]['menu-item-desc']);
 
             let headerTitle = document.getElementsByClassName('header-title')[0];
                 headerTitle.innerText = data[itemIndex].title;
