@@ -98,13 +98,12 @@ module.exports = {
                 }else{
                     let fileExtension = (path.parse(imgToWebpList[i]).ext).replace('.', '');
                 
-                    await webp.buffer2webpbuffer(fs.readFileSync(imgToWebpList[i]), fileExtension, '-q 80')
-                    .then(res => {
-                        let newFileName = imgToWebpList[i].replace(fileExtension, 'webp');
-                        fs.writeFileSync(newFileName, res);
-                        filesToCache.push(newFileName);
-                        console.log(`Converted: ${newFileName}`)
-                    });
+                    let bufferResult = await webp.buffer2webpbuffer(fs.readFileSync(imgToWebpList[i]), fileExtension, '-q 80');
+
+                    let newFileName = imgToWebpList[i].replace(fileExtension, 'webp');
+                    fs.writeFileSync(newFileName, bufferResult);
+                    filesToCache.push(newFileName);
+                    console.log(`Converted: ${newFileName}`)
                 }
             }
 
@@ -112,10 +111,10 @@ module.exports = {
         }
     },
     onPostBuild: async ({ utils }) => {
-        filesToCache.forEach(async function(filePath){
-            await utils.cache.save(filePath);
-            console.log(`Cached: ${filePath}`);
-        });
+        for(let i = 0; i < filesToCache.length; i++){
+            await utils.cache.save(filesToCache[i]);
+            console.log(`Cached: ${filesToCache[i]}`);
+        }
 
         console.log('-- Images processed --');
     }
