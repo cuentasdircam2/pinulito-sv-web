@@ -12,6 +12,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <title>Menu | Pollo Pinulito</title>
+    <meta name="description" content="Combos familiares, personales, pechugas, ensaladas, papas y ¡mucho más! Si quieres pollo, Pinulito es tu mejor opción.">
     <link rel="stylesheet" href="../css/site-wide-rules.css">
     <style>
 
@@ -208,6 +209,9 @@
                 </template>
 
             </ul>
+
+            <h3 class="extras-section-title">Extras:</h3>
+            <ul class="menu-items-container">
         </div>
 
         <div class="eventos-info-container">
@@ -258,6 +262,7 @@
         window.onload = function() {
 
             let ulElement = document.getElementsByClassName('menu-items-container')[0];
+            let ulElementExtras = document.getElementsByClassName('menu-items-container')[1];
 
             fetch('/_data/merged/menu_merged.json')
             .then(response => response.json())
@@ -290,6 +295,8 @@
 
                 if(!data[i]['menu-item-is-extra']) {
                     ulElement.appendChild(clone);
+                }else{
+                    ulElementExtras.appendChild(clone);
                 }
             }
 
