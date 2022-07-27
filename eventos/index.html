@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <title>Eventos | Pollo Pinulito</title>
     <meta name="description" content="¡Disfruta de pollo Pinulito con tu familia, compañeros de trabajo o con quién sea! ¿Para qué cocinar si puedes programar tu pedido de Pinulito y sólo preocuparte de recibirlo? Luego de elegir tus combos y llenar tus datos, uno de nuestros agentes se comunicará contigo para finalizar el pedido.">
     <link rel="stylesheet" href="../css/site-wide-rules.css">
@@ -265,8 +272,20 @@
 
         .extras-section-title {
             font-size: 3rem;
+            margin-bottom: 1rem;
         }
 
+        .extras-section-details {
+            overflow: hidden;
+            max-height: 0px;
+            padding: 0;
+            transition: max-height 0.2s ease-out, padding 0.2s ease-out;
+        }
+
+        .extras-section-details-hidden {
+            max-height: 2000px;
+            padding: 2rem 2rem;
+        }
 
         /* RESPONSIVE */
         /* Mobile */
@@ -295,6 +314,11 @@
 
             .menu-total {
                 padding: 0.5rem 0.5rem 0.5rem 1rem;
+            }
+
+
+            .extras-section-details {
+                padding: 0 !important;
             }
         }
 
@@ -338,7 +362,7 @@
             <h2>Eventos</h2>
             <p>¡Disfruta de pollo Pinulito con tu familia, compañeros de trabajo o con quién sea! ¿Para qué cocinar si puedes programar tu pedido de Pinulito y sólo preocuparte de recibirlo? Luego de elegir tus combos y llenar tus datos, uno de nuestros agentes se comunicará contigo para finalizar el pedido.</p>
             <br>
-            <p><em>Pedido mínimo: $100</em></p>
+            <p><em>Pedido mínimo: $50</em></p>
         </div>
 
         <div id="menu-container" tabindex="-1">
@@ -363,7 +387,7 @@
                                 <div class="menu-item-container-info">
                                     <h4 class="menu-item-title"></h4>
                                     <span>Precio: $<span class="menu-item-price"></span></span>
-                                    <span class="menu-item-cta" onclick="toggleMenuDetails(this)" onkeypress="toggleMenuDetails(this)" role="button" tabindex="0">Ver detalles</span>
+                                    <span class="menu-item-cta" onclick="toggleMenuDetails(this, 'menu-details-hidden')" onkeypress="toggleMenuDetails(this, 'menu-details-hidden')" role="button" tabindex="0">Ver detalles</span>
                                     <div class="eventos-menu-details">
                                     </div>
                                 </div>
@@ -386,9 +410,8 @@
             </ul>
 
             <h3 class="extras-section-title">Extras:</h3>
-            <ul class="menu-items-container">
-
-
+            <button class="button_type_1" onclick="toggleMenuDetails(this, 'extras-section-details-hidden', true)">MOSTRAR EXTRAS</button>
+            <ul class="menu-items-container extras-section-details" style="visibility: hidden;">
             </ul>
 
             <span class="menu-total">Total (estimado): $0</span>
@@ -464,7 +487,7 @@
                 <textarea name="detalles" id="eventos-detalles" hidden></textarea>
 
                 <div class="eventos-form-submit-container">
-                    <input class="button_cta" id="eventos-submit-btn" title="Pedido mínimo: $100" type="submit" value="Enviar" disabled>
+                    <input class="button_cta" id="eventos-submit-btn" title="Pedido mínimo: $50" type="submit" value="Enviar" disabled>
                 </div>
 
             </form>
@@ -566,15 +589,24 @@
             totalAmount = roundToTwo(totalAmount);
             finalDetalles += `\nTotal (estimado): $${totalAmount}`;
             totalSpan.innerText = `Total (estimado): $${totalAmount}`;
-            submitBtn.disabled = !(totalAmount >= 100);
-            submitBtn.title = !(totalAmount >= 100) ? 'Pedido mínimo: $100' : 'Enviar solicitud de pedido';
+            submitBtn.disabled = !(totalAmount >= 50);
+            submitBtn.title = !(totalAmount >= 50) ? 'Pedido mínimo: $50' : 'Enviar solicitud de pedido';
             eventosDetalles.value = finalDetalles;
         }
 
-        function toggleMenuDetails(element) {
+        function toggleMenuDetails(element, className, changeVisibility = false) {
             let nextSibling = element.nextElementSibling;
+            
+            if(changeVisibility && nextSibling.classList.contains(className)) {
+                nextSibling.style.visibility = 'hidden';
+                element.innerText = 'MOSTRAR EXTRAS';
 
-            nextSibling.classList.toggle('menu-details-hidden');
+            }else if(changeVisibility && !nextSibling.classList.contains(className)){
+                nextSibling.style.visibility = 'visible';
+                element.innerText = 'OCULTAR EXTRAS';
+            }
+
+            nextSibling.classList.toggle(className);
         }
 
 
