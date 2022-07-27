@@ -267,14 +267,14 @@
             fetch('/_data/merged/menu_merged.json')
             .then(response => response.json())
             .then(data => {
-                handleMenuRender(ulElement, data.items);
+                handleMenuRender(ulElement, ulElementExtras, data.items);
             })
             .catch(err => {
                 console.error(err);
             })
         }
 
-        function handleMenuRender(ulElement, data) {
+        function handleMenuRender(ulElement, ulElementExtras, data) {
 
             // Create menu items
             for(let i = 0; i < data.length; i++){
