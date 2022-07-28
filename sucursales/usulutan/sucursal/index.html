@@ -20,6 +20,33 @@
             background-image: var(--maps-desktop);
         }
 
+        .location-info-addr address p {
+            margin-bottom: 0.3rem;
+        }
+
+        .delivery-options {
+            margin-bottom: 1rem;
+        }
+        .delivery-options h5 {
+            font-size: 1.1rem;
+        }
+
+        .delivery-options-img-container {
+            display: flex;
+            height: 4rem;
+            column-gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .delivery-logo {
+            padding: .5rem;
+            border: 1px solid var(--color-red);
+        }
+
+        .delivery-unavailable {
+            visibility: hidden;
+        }
+
 
         /* RESPONSIVE */
         /* Mobile */
@@ -75,6 +102,14 @@
                         <p id="loc-addr">6ta. Calle Oriente N° 5 md Gerson Barrio El Centro, Aguilares.</p>
                         Teléfono: <a id="loc-tel" href="tel:+50377889900">7788-9900</a>
                     </address>
+                    <div class="delivery-options">
+                        <h5>Disponible en:</h5>
+                        <div class="delivery-options-img-container">
+                            <img id="delivery-pedidos-ya" class="delivery-logo" src="../../../assets/img/pedidos_ya.png" alt="Pedidos Ya">
+                            <img id="delivery-hugo" class="delivery-logo" src="../../../assets/img/hugo.png" alt="Hugo">
+                            <img id="delivery-uber-eats" class="delivery-logo" src="../../../assets/img/uber_eats.png" alt="Uber Eats">
+                        </div>
+                    </div>
                     <a id="loc-maps-btn-1" href="https://www.google.com/maps/search/?api=1&query=13.95761358573563,-89.186390665243" target="_blank" class="button_type_1">VER EN MAPS</a>
                 </div>
                 <div class="location-info-horario">
@@ -216,6 +251,9 @@
                 let horarioSabado = document.getElementById('loc-horario-sabado');
                 let horarioDomingo = document.getElementById('loc-horario-domingo');
                 let mapDisplay = document.getElementsByClassName('map-display')[0];
+                let deliveryPedidosYa = document.getElementById('delivery-pedidos-ya');
+                let deliveryHugo = document.getElementById('delivery-hugo');
+                let deliveryUberEats = document.getElementById('delivery-uber-eats');
 
                 document.getElementsByTagName('title')[0].innerText = `Sucursal de ${sucursalData.title} | Pollo Pinulito`;
                 title.innerText = sucursalData.title;
@@ -225,6 +263,9 @@
                 mapsBtn1.href = sucursalData['google-maps-info-sucursal']['maps-url-sucursal'];
                 mapsBtn2.href = sucursalData['google-maps-info-sucursal']['maps-url-sucursal'];
                 mapDisplay.setAttribute('style', `--maps-desktop: url(${sucursalData['google-maps-info-sucursal']['mapa-url-desktop-sucursal']}); --maps-mobile: url(${sucursalData['google-maps-info-sucursal']['mapa-url-mobile-sucursal']});`);
+                if(!sucursalData['domicilio-sucursal']['pedidos-ya-sucursal']) deliveryPedidosYa.classList.add('delivery-unavailable');
+                if(!sucursalData['domicilio-sucursal']['hugo-sucursal']) deliveryHugo.classList.add('delivery-unavailable');
+                if(!sucursalData['domicilio-sucursal']['uber-eats-sucursal']) deliveryUberEats.classList.add('delivery-unavailable');
 
                 horarioLunes.innerText = `${sucursalData['horario-apertura-sucursal']['horario-apertura-lunes-sucursal']['horario-apertura-lunes-hora-sucursal']}:${sucursalData['horario-apertura-sucursal']['horario-apertura-lunes-sucursal']['horario-apertura-lunes-minutos-sucursal']} ${sucursalData['horario-apertura-sucursal']['horario-apertura-lunes-sucursal']['horario-apertura-lunes-ampm-sucursal']} - ${sucursalData['horario-cierre-sucursal']['horario-cierre-lunes-sucursal']['horario-cierre-lunes-hora-sucursal']}:${sucursalData['horario-cierre-sucursal']['horario-cierre-lunes-sucursal']['horario-cierre-lunes-minutos-sucursal']} ${sucursalData['horario-cierre-sucursal']['horario-cierre-lunes-sucursal']['horario-cierre-lunes-ampm-sucursal']}`;
                 horarioMartes.innerText = `${sucursalData['horario-apertura-sucursal']['horario-apertura-martes-sucursal']['horario-apertura-martes-hora-sucursal']}:${sucursalData['horario-apertura-sucursal']['horario-apertura-martes-sucursal']['horario-apertura-martes-minutos-sucursal']} ${sucursalData['horario-apertura-sucursal']['horario-apertura-martes-sucursal']['horario-apertura-martes-ampm-sucursal']} - ${sucursalData['horario-cierre-sucursal']['horario-cierre-martes-sucursal']['horario-cierre-martes-hora-sucursal']}:${sucursalData['horario-cierre-sucursal']['horario-cierre-martes-sucursal']['horario-cierre-martes-minutos-sucursal']} ${sucursalData['horario-cierre-sucursal']['horario-cierre-martes-sucursal']['horario-cierre-martes-ampm-sucursal']}`;
