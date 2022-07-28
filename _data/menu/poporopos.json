@@ -2,12 +2,12 @@
   "menu-item-is-extra": false,
   "imagen": "/assets/img/uploads/poporopos-512x512.png",
   "imagen-thumb": "/assets/img/uploads/poporopos-256x256.png",
-  "title": "Poporopo",
-  "menu-item-desc": "Una orden de poporopo.",
+  "title": "Poporopos",
+  "menu-item-desc": "Una orden de poporopos.",
   "menu-item-precio": "3.75",
   "menu-item-parts": [
     {
-      "menu-item-part-name": "1 poporopo"
+      "menu-item-part-name": "1 orden de poporopos"
     }
   ]
 }

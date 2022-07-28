@@ -2,12 +2,12 @@
   "menu-item-is-extra": true,
   "imagen": "/assets/img/uploads/papas-512x512.png",
   "imagen-thumb": "/assets/img/uploads/papas-256x256.png",
-  "title": "Papa",
-  "menu-item-desc": "1 papa",
+  "title": "Papas",
+  "menu-item-desc": "1 orden de papas",
   "menu-item-precio": "0.85",
   "menu-item-parts": [
     {
-      "menu-item-part-name": "1 papa"
+      "menu-item-part-name": "1 orden de papas"
     }
   ]
 }
