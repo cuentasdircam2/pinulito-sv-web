@@ -21,7 +21,6 @@
   "homepage": "https://github.com/cuentasdircam2/pinulito-sv-web#readme",
   "dependencies": {
     "glob": "^8.0.3",
-    "netlify-cms-locales": "^1.39.0",
     "webp-converter": "^2.3.3"
   }
 }
