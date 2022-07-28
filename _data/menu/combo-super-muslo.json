@@ -13,10 +13,13 @@
       "menu-item-part-name": "-1 papa"
     },
     {
-      "menu-item-part-name": "-2 panes"
+      "menu-item-part-name": "- 1 ensalada"
     },
     {
-      "menu-item-part-name": " -1 soda"
+      "menu-item-part-name": "- 2 panes"
+    },
+    {
+      "menu-item-part-name": "- 1 soda"
     }
   ]
 }
