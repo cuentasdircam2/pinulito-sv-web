@@ -1,5 +1,6 @@
 src/
 lib/
+assets/img/sucursales/*
 node_modules/*
 map-marker.txt
 favicon_package_v0.16.zip
