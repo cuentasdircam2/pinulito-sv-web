@@ -326,7 +326,10 @@
                         <a class="menu-item-url" href="#">
                             <div class="menu-item-container">
                                 <div class="menu-item-container-img">
-                                    <img src="" alt="">
+                                    <picture>
+                                        <source srcset="" type="image/webp">
+                                        <img src="" alt="">
+                                    </picture>
                                 </div>
                                 <div class="menu-item-container-info">
                                     <h4 class="menu-item-title"></h4>
@@ -409,7 +412,10 @@
 
                 let liElement = document.getElementById('menu-item-template');
 
-                let imgElement = liElement.content.querySelector('.menu-item-container-img > img');
+                let imgElementSrc = liElement.content.querySelector('.menu-item-container-img source');
+                    imgElementSrc.srcset = `${(data[i]['imagen-thumb']).replace(/\.(png|jpg)/, '.webp')}`;
+
+                let imgElement = liElement.content.querySelector('.menu-item-container-img img');
                     imgElement.src = data[i]['imagen-thumb'];
                     imgElement.alt = data[i].title;
 
