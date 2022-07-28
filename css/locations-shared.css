@@ -12,7 +12,7 @@
 #locations-outer-container h2 {
     color: white;
     text-shadow: 0 0 30px rgba(0,0,0,.5);
-    word-break: break-word;
+    overflow-wrap: break-word;
     text-align: center;
 }
 
@@ -114,7 +114,7 @@
         padding: 4rem 1rem;
     }
     #locations-outer-container h2 {
-        font-size: 4rem;
+        font-size: 3.2rem;
     }
 
     #locations-actual-container {
