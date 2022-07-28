@@ -12,6 +12,8 @@
 #locations-outer-container h2 {
     color: white;
     text-shadow: 0 0 30px rgba(0,0,0,.5);
+    word-break: break-word;
+    text-align: center;
 }
 
 #locations-actual-container {
@@ -108,6 +110,12 @@
 /* RESPONSIVE */
 /* Mobile */
 @media (max-width: 991.98px) {
+    #locations-outer-container {
+        padding: 4rem 1rem;
+    }
+    #locations-outer-container h2 {
+        font-size: 4rem;
+    }
 
     #locations-actual-container {
         padding: 3rem 8% !important;
