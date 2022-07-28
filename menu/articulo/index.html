@@ -191,7 +191,11 @@
                 </div>
             </div>
             <div class="header-section-container header-right-container">
-                <img class="header-img" src="" alt="">
+                <picture>
+                    <source id="header-img-webp" srcset="./assets/img/logo_single.webp" type="image/webp">
+                    <img class="header-img" src="./assets/img/logo_single.png" alt="">
+                </picture> 
+                <!-- <img class="header-img" src="" alt=""> -->
             </div>
             
         </header>
@@ -290,10 +294,12 @@
             let headerDesc = document.getElementsByClassName('header-text')[0];
                 headerDesc.innerText = data[itemIndex]['menu-item-desc'];
             
+            let headerImgSource = document.getElementById('header-img-webp');
+                headerImgSource.srcset = `${(data[itemIndex].imagen).replace(/\.(png|jpg)/, '.webp')}`;
+
             let headerImg = document.getElementsByClassName('header-img')[0];
                 headerImg.src = data[itemIndex].imagen;
                 headerImg.alt = data[itemIndex].title;
-
             // Create menu items
             for(let i = 0; i < data[itemIndex]['menu-item-parts'].length; i++){
 
