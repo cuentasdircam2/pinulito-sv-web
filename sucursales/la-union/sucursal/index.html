@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <title>Sucursal | Pollo Pinulito</title>
+    <meta id="meta-desc" name="description" content="">
     <link rel="stylesheet" href="../../../css/site-wide-rules.css">
     <link rel="stylesheet" href="../../../css/locations-shared.css">
     <style>
@@ -32,7 +40,10 @@
     <nav>
         <div id="nav-logo-container">
             <a href="/">
-                <img src="../../../assets/img/logo.png" alt="Logo">
+                <picture>
+                    <source srcset="/assets/img/logo.webp" type="image/webp">
+                    <img src="/assets/img/logo.png" alt="Logo">
+                </picture> 
             </a>
         </div>
         <ul id="nav-links-container">
@@ -140,13 +151,10 @@
                     <h4>Sigamos en contacto</h4>
                     <ul>
                         <li>
-                            <a href="#">Facebook</a>
+                            <a href="https://www.facebook.com/PollopinulitoElSalvador/" target="_blank" rel="noopener noreferrer">Facebook</a>
                         </li>
                         <li>
-                            <a href="#">Instagram</a>
-                        </li>
-                        <li>
-                            <a href="#">Contáctanos</a>
+                            <a href="https://www.instagram.com/pollopinulito.sv/" target="_blank" rel="noopener noreferrer">Instagram</a>
                         </li>
                     </ul>
                 </div>
@@ -163,6 +171,8 @@
                 const params = new Proxy(new URLSearchParams(window.location.search), {
                     get: (searchParams, prop) => searchParams.get(prop),
                 });
+
+                document.getElementById('meta-desc').setAttribute('content', `¡Nuestra sucursal en ${decodeURIComponent(params.n)} te está esperando!`);
 
                 let departamento = (window.location.pathname).split('/')[2];
 
@@ -227,6 +237,7 @@
             }
 
             function handleError() {
+                document.getElementById('meta-desc').setAttribute('content', `¡Nuestras sucursales te estan esperando!`);
                 return alert(`La sucursal solicitada no existe.`);
             }
 

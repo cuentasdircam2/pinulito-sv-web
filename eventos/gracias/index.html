@@ -12,20 +12,8 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <title>¡Gracias por tu pedido! | Pollo Pinulito</title>
-    <meta id="meta-desc" name="description" content="¡Gracias por tu pedido! uno de nuestros agentes se pondrá en contacto contigo lo antes posible para finalizar el pedido.">
+    <meta name="description" content="¡Gracias por tu pedido! uno de nuestros agentes se pondrá en contacto contigo lo antes posible para finalizar el pedido.">
     <link rel="stylesheet" href="../../css/site-wide-rules.css">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-        if (window.netlifyIdentity) {
-          window.netlifyIdentity.on("init", user => {
-            if (!user) {
-              window.netlifyIdentity.on("login", () => {
-                document.location.href = "/admin/";
-              });
-            }
-          });
-        }
-      </script>
     <style>
         
         .message-container {
@@ -64,7 +52,10 @@
     <nav>
         <div id="nav-logo-container">
             <a href="/">
-                <img src="../../assets/img/logo.png" alt="Logo">
+                <picture>
+                    <source srcset="/assets/img/logo.webp" type="image/webp">
+                    <img src="/assets/img/logo.png" alt="Logo">
+                </picture>
             </a>
         </div>
         <ul id="nav-links-container">
@@ -110,13 +101,10 @@
                     <h4>Sigamos en contacto</h4>
                     <ul>
                         <li>
-                            <a href="#">Facebook</a>
+                            <a href="https://www.facebook.com/PollopinulitoElSalvador/" target="_blank" rel="noopener noreferrer">Facebook</a>
                         </li>
                         <li>
-                            <a href="#">Instagram</a>
-                        </li>
-                        <li>
-                            <a href="#">Contáctanos</a>
+                            <a href="https://www.instagram.com/pollopinulito.sv/" target="_blank" rel="noopener noreferrer">Instagram</a>
                         </li>
                     </ul>
                 </div>

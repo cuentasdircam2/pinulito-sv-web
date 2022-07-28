@@ -12,6 +12,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <title>Sucursales | Pollo Pinulito</title>
+    <meta id="meta-desc" name="description" content="">
     <link rel="stylesheet" href="../../css/site-wide-rules.css">
     <link rel="stylesheet" href="../../css/locations-shared.css">
 </head>
@@ -22,7 +23,10 @@
     <nav>
         <div id="nav-logo-container">
             <a href="/">
-                <img src="../../assets/img/logo.png" alt="Logo">
+                <picture>
+                    <source srcset="/assets/img/logo.webp" type="image/webp">
+                    <img src="/assets/img/logo.png" alt="Logo">
+                </picture> 
             </a>
         </div>
         <ul id="nav-links-container">
@@ -79,13 +83,10 @@
                     <h4>Sigamos en contacto</h4>
                     <ul>
                         <li>
-                            <a href="#">Facebook</a>
+                            <a href="https://www.facebook.com/PollopinulitoElSalvador/" target="_blank" rel="noopener noreferrer">Facebook</a>
                         </li>
                         <li>
-                            <a href="#">Instagram</a>
-                        </li>
-                        <li>
-                            <a href="#">Contáctanos</a>
+                            <a href="https://www.instagram.com/pollopinulito.sv/" target="_blank" rel="noopener noreferrer">Instagram</a>
                         </li>
                     </ul>
                 </div>
@@ -121,6 +122,7 @@
 
                 departamento = (window.location.pathname).split('/')[2];
                 document.getElementsByTagName('title')[0].innerText = `Sucursales en ${sucursalesDic[departamento]} | Pollo Pinulito`;
+                document.getElementById('meta-desc').setAttribute('content', `?Encuentra todas nuestras sucursales en ${sucursalesDic[departamento]}!`);
     
                 fetch('/_data/merged/sucursales_merged.json')
                 .then(response => response.json())

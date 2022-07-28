@@ -14,18 +14,6 @@
     <title>Articulo | Pollo Pinulito</title>
     <meta id="meta-desc" name="description" content="">
     <link rel="stylesheet" href="../../css/site-wide-rules.css">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-        if (window.netlifyIdentity) {
-          window.netlifyIdentity.on("init", user => {
-            if (!user) {
-              window.netlifyIdentity.on("login", () => {
-                document.location.href = "/admin/";
-              });
-            }
-          });
-        }
-      </script>
     <style>
         
         /* HEADER */
@@ -67,6 +55,7 @@
         }
         .header-img {
             height: 100%;
+            display: block;
         }
 
 
@@ -162,7 +151,10 @@
     <nav>
         <div id="nav-logo-container">
             <a href="/">
-                <img src="../../assets/img/logo.png" alt="Logo">
+                <picture>
+                    <source srcset="/assets/img/logo.webp" type="image/webp">
+                    <img src="/assets/img/logo.png" alt="Logo">
+                </picture> 
             </a>
         </div>
         <ul id="nav-links-container">
@@ -239,13 +231,10 @@
                     <h4>Sigamos en contacto</h4>
                     <ul>
                         <li>
-                            <a href="#">Facebook</a>
+                            <a href="https://www.facebook.com/PollopinulitoElSalvador/" target="_blank" rel="noopener noreferrer">Facebook</a>
                         </li>
                         <li>
-                            <a href="#">Instagram</a>
-                        </li>
-                        <li>
-                            <a href="#">Contáctanos</a>
+                            <a href="https://www.instagram.com/pollopinulito.sv/" target="_blank" rel="noopener noreferrer">Instagram</a>
                         </li>
                     </ul>
                 </div>
