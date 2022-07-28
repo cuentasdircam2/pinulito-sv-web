@@ -7,19 +7,19 @@
   "menu-item-precio": "3.75",
   "menu-item-parts": [
     {
-      "menu-item-part-name": "-1 muslo"
+      "menu-item-part-name": "1 muslo"
     },
     {
-      "menu-item-part-name": "-1 papa"
+      "menu-item-part-name": "1 papa"
     },
     {
-      "menu-item-part-name": "- 1 ensalada"
+      "menu-item-part-name": "1 ensalada"
     },
     {
-      "menu-item-part-name": "- 2 panes"
+      "menu-item-part-name": "2 panes"
     },
     {
-      "menu-item-part-name": "- 1 soda"
+      "menu-item-part-name": "1 soda"
     }
   ]
 }
