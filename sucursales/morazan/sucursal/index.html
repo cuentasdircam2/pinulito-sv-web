@@ -101,7 +101,6 @@
                     <h4>Contacto</h4>
                     <address>
                         <p id="loc-addr">6ta. Calle Oriente N° 5 md Gerson Barrio El Centro, Aguilares.</p>
-                        Teléfono: <a id="loc-tel" href="tel:+50377889900">7788-9900</a>
                     </address>
                     <div class="delivery-options delivery-unavailable">
                         <h5>Disponible en:</h5>
@@ -194,6 +193,13 @@
                         </li>
                     </ul>
                 </div>
+                <div class="footer-section-container">
+                    <p>
+                        Dudas o consultas, puedes escribirnos por WhatsApp al número: <strong>7295-3014</strong>
+                        <br>
+                        Lunes a viernes de 9 AM a 5 PM y sábados de 8:30 AM a 12:30 PM
+                    </p>
+                </div>
             </div>
         </footer>
 
@@ -241,7 +247,6 @@
 
                 let title = document.getElementById('loc-title');
                 let addr = document.getElementById('loc-addr');
-                let tel = document.getElementById('loc-tel');
                 let mapsBtn1 = document.getElementById('loc-maps-btn-1');
                 let mapsBtn2 = document.getElementById('loc-maps-btn-2');
                 let horarioLunes = document.getElementById('loc-horario-lunes');
@@ -260,8 +265,6 @@
                 document.getElementsByTagName('title')[0].innerText = `Sucursal de ${sucursalData.title} | Pollo Pinulito`;
                 title.innerText = sucursalData.title;
                 addr.innerText = sucursalData['direccion-sucursal'];
-                tel.innerText = sucursalData['telefono-sucursal'];
-                tel.href = `tel:+503${sucursalData['telefono-sucursal']}`;
                 mapsBtn1.href = sucursalData['google-maps-info-sucursal']['maps-url-sucursal'];
                 mapsBtn2.href = sucursalData['google-maps-info-sucursal']['maps-url-sucursal'];
                 mapDisplay.setAttribute('style', `--maps-desktop: url(${sucursalData['google-maps-info-sucursal']['mapa-url-desktop-sucursal']}); --maps-mobile: url(${sucursalData['google-maps-info-sucursal']['mapa-url-mobile-sucursal']});`);
