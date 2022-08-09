@@ -6,9 +6,9 @@
     "uber-eats-sucursal": false
   },
   "google-maps-info-sucursal": {
-    "maps-url-sucursal": "#",
-    "mapa-url-desktop-sucursal": "#",
-    "mapa-url-mobile-sucursal": "#"
+    "maps-url-sucursal": "https://goo.gl/maps/iowW6GBe4LXMoaBM8",
+    "mapa-url-desktop-sucursal": "https://maps.googleapis.com/maps/api/staticmap?zoom=18&size=640x295&scale=2&markers=scale:2%7Canchor:center%7Cicon:https://tinyurl.com/3tp7njra%7C13.6721468,-89.2846765&map_id=5c4bd95e91db72d3&key=AIzaSyBOX6lfODxb9AMT0jVrrtPDBw4UDCAA-t0&signature=5ODExQ8GVgU5O30yVgqp-mg9QrU=",
+    "mapa-url-mobile-sucursal": "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=180x345&scale=2&markers=scale:2%7Canchor:center%7Cicon:https://tinyurl.com/3zbd5u72%7C13.6721468,-89.2846765&map_id=d07d1dac6491d39&key=AIzaSyBOX6lfODxb9AMT0jVrrtPDBw4UDCAA-t0&signature=TRdwOYIXUYGzVyEXt98xDa-BT4o="
   },
   "title": "Santa Tecla PNC",
   "direccion-sucursal": "4°ta Calle Oriente y 5°ta Avenida Sur, Avenida Melvin Jones Local 2-10, Santa Tecla,Depto. La Libertad",
