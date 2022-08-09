@@ -6,9 +6,9 @@
     "uber-eats-sucursal": false
   },
   "google-maps-info-sucursal": {
-    "maps-url-sucursal": "#",
-    "mapa-url-desktop-sucursal": "#",
-    "mapa-url-mobile-sucursal": "#"
+    "maps-url-sucursal": "https://goo.gl/maps/BhGWtgNXkWSmutdH7",
+    "mapa-url-desktop-sucursal": "https://maps.googleapis.com/maps/api/staticmap?zoom=18&size=640x295&scale=2&markers=scale:2%7Canchor:center%7Cicon:https://tinyurl.com/3tp7njra%7C13.7931292,-89.1794356&map_id=25466509828e687&key=AIzaSyBOX6lfODxb9AMT0jVrrtPDBw4UDCAA-t0&signature=a-LJKMolvTh7miNieoyhOLToCaA=",
+    "mapa-url-mobile-sucursal": "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=180x345&scale=2&markers=scale:2%7Canchor:center%7Cicon:https://tinyurl.com/3zbd5u72%7C13.7931292,-89.1794356&map_id=58152ed7c2359ad9&key=AIzaSyBOX6lfODxb9AMT0jVrrtPDBw4UDCAA-t0&signature=5hDgkqZrBdnK1oIUsECn6i2XS4Q="
   },
   "title": "Pericentro Apopa",
   "direccion-sucursal": "Carretera troncal del norte, km 12 Centro Comercial Pericentro, Local Numero 28-B, Apopa San Salvador  ",
