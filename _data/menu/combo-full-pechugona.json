@@ -1,0 +1,22 @@
+{
+  "menu-item-is-extra": false,
+  "imagen": "/assets/img/uploads/full-pechugona-512x512.png",
+  "imagen-thumb": "/assets/img/uploads/full-pechugona-256x256.png",
+  "title": "Combo Full Pechugona",
+  "menu-item-desc": "¿Con ganas de una pechuga? ¡este el tu combo! incluye una pechuga, una papa, una ensalada y dos panes.",
+  "menu-item-precio": "3.40",
+  "menu-item-parts": [
+    {
+      "menu-item-part-name": "1 Pechugona"
+    },
+    {
+      "menu-item-part-name": "1 Papas fritas"
+    },
+    {
+      "menu-item-part-name": "1 Ensalada"
+    },
+    {
+      "menu-item-part-name": "2 panes"
+    }
+  ]
+}
