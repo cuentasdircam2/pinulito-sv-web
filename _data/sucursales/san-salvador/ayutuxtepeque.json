@@ -1,7 +1,7 @@
 {
   "departamento-sucursal": "san-salvador",
   "domicilio-sucursal": {
-    "pedidos-ya-sucursal": false,
+    "pedidos-ya-sucursal": true,
     "hugo-sucursal": false,
     "uber-eats-sucursal": false
   },
@@ -11,7 +11,7 @@
     "mapa-url-mobile-sucursal": "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=180x345&scale=2&markers=scale:2%7Canchor:center%7Cicon:https://tinyurl.com/3zbd5u72%7C13.735524464266186,-89.2025652825117&map_id=2b96b8a4a25fe825&key=AIzaSyBOX6lfODxb9AMT0jVrrtPDBw4UDCAA-t0&signature=7Ric8bEPeD-MEF2xWKSmKxK87e0="
   },
   "title": "Ayutuxtepeque",
-  "direccion-sucursal": "Calle 15 de septiembre y 29 avenida norte casa #44 local # 2 Ayutuxtepeque, San Savaldor.",
+  "direccion-sucursal": "Calle 15 de Septiembre y 29 Avenida Norte, casa #44, local #2, Ayutuxtepeque, San Savaldor.",
   "horario-apertura-sucursal": {
     "horario-apertura-lunes-sucursal": {
       "horario-apertura-lunes-hora-sucursal": "9",
