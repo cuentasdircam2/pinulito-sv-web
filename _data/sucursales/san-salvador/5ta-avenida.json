@@ -1,7 +1,7 @@
 {
   "departamento-sucursal": "san-salvador",
   "domicilio-sucursal": {
-    "pedidos-ya-sucursal": false,
+    "pedidos-ya-sucursal": true,
     "hugo-sucursal": false,
     "uber-eats-sucursal": false
   },
@@ -11,7 +11,7 @@
     "mapa-url-mobile-sucursal": "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=180x345&scale=2&markers=scale:2%7Canchor:center%7Cicon:https://tinyurl.com/3zbd5u72%7C13.714162842824747,-89.19277372027254&map_id=caa82f57808d2962&key=AIzaSyBOX6lfODxb9AMT0jVrrtPDBw4UDCAA-t0&signature=FXKkK-MbqddNeykxbkWmnwoSc0Q="
   },
   "title": "5ta Avenida",
-  "direccion-sucursal": "5 avenida norte 1643 local 1 colonia layco, condominio San Miguelito, San Salvador.",
+  "direccion-sucursal": "5a Avenida Norte, # 1643 Condominio San Miguelito, local 1, Colonia Layco, San Salvador.",
   "horario-apertura-sucursal": {
     "horario-apertura-lunes-sucursal": {
       "horario-apertura-lunes-hora-sucursal": "8",
