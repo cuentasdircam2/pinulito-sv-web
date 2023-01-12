@@ -10,8 +10,8 @@
     "mapa-url-desktop-sucursal": "https://maps.googleapis.com/maps/api/staticmap?zoom=18&size=640x295&scale=2&markers=scale:2%7Canchor:center%7Cicon:https://tinyurl.com/3tp7njra%7C13.723439662684811,-88.93442084646165&map_id=ddd699a31733fa8d&key=AIzaSyBOX6lfODxb9AMT0jVrrtPDBw4UDCAA-t0&signature=lu3D6aqGbBwqpDRo_e0LmVSKyMc=",
     "mapa-url-mobile-sucursal": "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=180x345&scale=2&markers=scale:2%7Canchor:center%7Cicon:https://tinyurl.com/3zbd5u72%7C13.723439662684811,-88.93442084646165&map_id=8069e891880b47ab&key=AIzaSyBOX6lfODxb9AMT0jVrrtPDBw4UDCAA-t0&signature=oHp1ViZoKaxLnc-6UTXswXjAroY="
   },
-  "title": "Cojutepeque",
-  "direccion-sucursal": "Avenida jose matias rivas numero 4 cojutepeque, Cuscatlan.",
+  "title": "Texaco Cojutepeque",
+  "direccion-sucursal": "Texaco Cojutepeque, Km 35 Carretera Panamericana Cantón Santa Lucía,  Cojutepeque, Cuscatlan.",
   "horario-apertura-sucursal": {
     "horario-apertura-lunes-sucursal": {
       "horario-apertura-lunes-hora-sucursal": "8",
