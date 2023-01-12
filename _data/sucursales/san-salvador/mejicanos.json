@@ -1,7 +1,7 @@
 {
   "departamento-sucursal": "san-salvador",
   "domicilio-sucursal": {
-    "pedidos-ya-sucursal": false,
+    "pedidos-ya-sucursal": true,
     "hugo-sucursal": false,
     "uber-eats-sucursal": false
   },
