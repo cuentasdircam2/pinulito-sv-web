@@ -1,7 +1,7 @@
 {
   "departamento-sucursal": "san-salvador",
   "domicilio-sucursal": {
-    "pedidos-ya-sucursal": false,
+    "pedidos-ya-sucursal": true,
     "hugo-sucursal": false,
     "uber-eats-sucursal": false
   },
@@ -11,7 +11,7 @@
     "mapa-url-mobile-sucursal": "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=180x345&scale=2&markers=scale:2%7Canchor:center%7Cicon:https://tinyurl.com/3zbd5u72%7C13.7010053921711,-89.19424812163044&map_id=cdcfb08a74fe34a0&key=AIzaSyBOX6lfODxb9AMT0jVrrtPDBw4UDCAA-t0&signature=iv2dS4qY9ODtafR9zxMtCGI2Zi0="
   },
   "title": "3ra Avenida",
-  "direccion-sucursal": "3° Avenida norte entre 1° y 3° calle poniente N° 206, San Salvador, San Salvador.",
+  "direccion-sucursal": " 3a. Avenida Norte entre 1a. y 3a. Calle Poniente, local #206, San Salvador, San Salvador",
   "horario-apertura-sucursal": {
     "horario-apertura-lunes-sucursal": {
       "horario-apertura-lunes-hora-sucursal": "9",
@@ -51,37 +51,37 @@
   },
   "horario-cierre-sucursal": {
     "horario-cierre-lunes-sucursal": {
-      "horario-cierre-lunes-hora-sucursal": "5",
+      "horario-cierre-lunes-hora-sucursal": "6",
       "horario-cierre-lunes-minutos-sucursal": "00",
       "horario-cierre-lunes-ampm-sucursal": "PM"
     },
     "horario-cierre-martes-sucursal": {
-      "horario-cierre-martes-hora-sucursal": "5",
+      "horario-cierre-martes-hora-sucursal": "6",
       "horario-cierre-martes-minutos-sucursal": "00",
       "horario-cierre-martes-ampm-sucursal": "PM"
     },
     "horario-cierre-miercoles-sucursal": {
-      "horario-cierre-miercoles-hora-sucursal": "5",
+      "horario-cierre-miercoles-hora-sucursal": "6",
       "horario-cierre-miercoles-minutos-sucursal": "00",
       "horario-cierre-miercoles-ampm-sucursal": "PM"
     },
     "horario-cierre-jueves-sucursal": {
-      "horario-cierre-jueves-hora-sucursal": "5",
+      "horario-cierre-jueves-hora-sucursal": "6",
       "horario-cierre-jueves-minutos-sucursal": "00",
       "horario-cierre-jueves-ampm-sucursal": "PM"
     },
     "horario-cierre-viernes-sucursal": {
-      "horario-cierre-viernes-hora-sucursal": "5",
+      "horario-cierre-viernes-hora-sucursal": "6",
       "horario-cierre-viernes-minutos-sucursal": "00",
       "horario-cierre-viernes-ampm-sucursal": "PM"
     },
     "horario-cierre-sabado-sucursal": {
-      "horario-cierre-sabado-hora-sucursal": "5",
+      "horario-cierre-sabado-hora-sucursal": "6",
       "horario-cierre-sabado-minutos-sucursal": "00",
       "horario-cierre-sabado-ampm-sucursal": "PM"
     },
     "horario-cierre-domingo-sucursal": {
-      "horario-cierre-domingo-hora-sucursal": "5",
+      "horario-cierre-domingo-hora-sucursal": "6",
       "horario-cierre-domingo-minutos-sucursal": "00",
       "horario-cierre-domingo-ampm-sucursal": "PM"
     }
