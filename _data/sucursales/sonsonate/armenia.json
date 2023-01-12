@@ -1,0 +1,89 @@
+{
+  "departamento-sucursal": "sonsonate",
+  "domicilio-sucursal": {
+    "pedidos-ya-sucursal": false,
+    "hugo-sucursal": false,
+    "uber-eats-sucursal": false
+  },
+  "google-maps-info-sucursal": {
+    "maps-url-sucursal": "#",
+    "mapa-url-desktop-sucursal": "#",
+    "mapa-url-mobile-sucursal": "#"
+  },
+  "title": "Armenia",
+  "direccion-sucursal": "1a. Calle Oriente, Avenida 3 de abril y 2a. Avenida Norte, local #3, Armenia, Sonsonate.",
+  "horario-apertura-sucursal": {
+    "horario-apertura-lunes-sucursal": {
+      "horario-apertura-lunes-hora-sucursal": "8",
+      "horario-apertura-lunes-minutos-sucursal": "00",
+      "horario-apertura-lunes-ampm-sucursal": "AM"
+    },
+    "horario-apertura-martes-sucursal": {
+      "horario-apertura-martes-hora-sucursal": "8",
+      "horario-apertura-martes-minutos-sucursal": "00",
+      "horario-apertura-martes-ampm-sucursal": "AM"
+    },
+    "horario-apertura-miercoles-sucursal": {
+      "horario-apertura-miercoles-hora-sucursal": "8",
+      "horario-apertura-miercoles-minutos-sucursal": "00",
+      "horario-apertura-miercoles-ampm-sucursal": "AM"
+    },
+    "horario-apertura-jueves-sucursal": {
+      "horario-apertura-jueves-hora-sucursal": "8",
+      "horario-apertura-jueves-minutos-sucursal": "00",
+      "horario-apertura-jueves-ampm-sucursal": "AM"
+    },
+    "horario-apertura-viernes-sucursal": {
+      "horario-apertura-viernes-hora-sucursal": "8",
+      "horario-apertura-viernes-minutos-sucursal": "00",
+      "horario-apertura-viernes-ampm-sucursal": "AM"
+    },
+    "horario-apertura-sabado-sucursal": {
+      "horario-apertura-sabado-hora-sucursal": "8",
+      "horario-apertura-sabado-minutos-sucursal": "00",
+      "horario-apertura-sabado-ampm-sucursal": "AM"
+    },
+    "horario-apertura-domingo-sucursal": {
+      "horario-apertura-domingo-hora-sucursal": "8",
+      "horario-apertura-domingo-minutos-sucursal": "00",
+      "horario-apertura-domingo-ampm-sucursal": "AM"
+    }
+  },
+  "horario-cierre-sucursal": {
+    "horario-cierre-lunes-sucursal": {
+      "horario-cierre-lunes-hora-sucursal": "7",
+      "horario-cierre-lunes-minutos-sucursal": "00",
+      "horario-cierre-lunes-ampm-sucursal": "PM"
+    },
+    "horario-cierre-martes-sucursal": {
+      "horario-cierre-martes-hora-sucursal": "7",
+      "horario-cierre-martes-minutos-sucursal": "00",
+      "horario-cierre-martes-ampm-sucursal": "PM"
+    },
+    "horario-cierre-miercoles-sucursal": {
+      "horario-cierre-miercoles-hora-sucursal": "7",
+      "horario-cierre-miercoles-minutos-sucursal": "00",
+      "horario-cierre-miercoles-ampm-sucursal": "PM"
+    },
+    "horario-cierre-jueves-sucursal": {
+      "horario-cierre-jueves-hora-sucursal": "7",
+      "horario-cierre-jueves-minutos-sucursal": "00",
+      "horario-cierre-jueves-ampm-sucursal": "PM"
+    },
+    "horario-cierre-viernes-sucursal": {
+      "horario-cierre-viernes-hora-sucursal": "7",
+      "horario-cierre-viernes-minutos-sucursal": "00",
+      "horario-cierre-viernes-ampm-sucursal": "PM"
+    },
+    "horario-cierre-sabado-sucursal": {
+      "horario-cierre-sabado-hora-sucursal": "7",
+      "horario-cierre-sabado-minutos-sucursal": "00",
+      "horario-cierre-sabado-ampm-sucursal": "PM"
+    },
+    "horario-cierre-domingo-sucursal": {
+      "horario-cierre-domingo-hora-sucursal": "7",
+      "horario-cierre-domingo-minutos-sucursal": "00",
+      "horario-cierre-domingo-ampm-sucursal": "PM"
+    }
+  }
+}
