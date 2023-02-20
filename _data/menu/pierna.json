@@ -1,7 +1,7 @@
 {
   "menu-item-is-extra": true,
-  "imagen": "/assets/img/uploads/pierna-512x512.png",
-  "imagen-thumb": "/assets/img/uploads/pierna-256x256.png",
+  "imagen": "/assets/img/uploads/pierna-512.png",
+  "imagen-thumb": "/assets/img/uploads/pierna-256.png",
   "title": "Pierna",
   "menu-item-desc": "1 pierna",
   "menu-item-precio": "1.05",
