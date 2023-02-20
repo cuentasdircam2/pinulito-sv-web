@@ -1,7 +1,7 @@
 {
   "menu-item-is-extra": true,
-  "imagen": "/assets/img/uploads/ala-512x512.png",
-  "imagen-thumb": "/assets/img/uploads/ala-256x256.png",
+  "imagen": "/assets/img/uploads/ala-512.png",
+  "imagen-thumb": "/assets/img/uploads/ala-256.png",
   "title": "Ala",
   "menu-item-desc": "1 ala",
   "menu-item-precio": "1.05",
