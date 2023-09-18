@@ -4,7 +4,7 @@
   "imagen-thumb": "/assets/img/uploads/combo-2-256.png",
   "title": "Combo 2",
   "menu-item-desc": "¿Con hambre? éste combo es la mejor elección para ti. Disfruta de tres piezas de pollo, una papa, una ensalada, un pan y una soda al mejor precio.",
-  "menu-item-precio": "4.95",
+  "menu-item-precio": "5.25",
   "menu-item-parts": [
     {
       "menu-item-part-name": "3 piezas (alas y piernas)"
@@ -14,9 +14,6 @@
     },
     {
       "menu-item-part-name": "1 ensalada"
-    },
-    {
-      "menu-item-part-name": "1 pan"
     },
     {
       "menu-item-part-name": "1 soda"
