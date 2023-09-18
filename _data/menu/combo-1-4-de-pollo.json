@@ -1,0 +1,22 @@
+{
+  "menu-item-is-extra": true,
+  "imagen": "/assets/img/uploads/deluxe-512.png",
+  "imagen-thumb": "/assets/img/uploads/deluxe-256.png",
+  "title": "Combo 1/4 de Pollo",
+  "menu-item-desc": "Delicioso 1/4 de pollo tradicional o picante con sus complementos",
+  "menu-item-precio": "3.95",
+  "menu-item-parts": [
+    {
+      "menu-item-part-name": "1 entrepierna"
+    },
+    {
+      "menu-item-part-name": "1 orden de papas fritas"
+    },
+    {
+      "menu-item-part-name": "1 ensalada"
+    },
+    {
+      "menu-item-part-name": "1 pan"
+    }
+  ]
+}
