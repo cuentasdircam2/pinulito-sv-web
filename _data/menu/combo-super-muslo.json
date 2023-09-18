@@ -1,10 +1,10 @@
 {
   "menu-item-is-extra": false,
-  "imagen": "/assets/img/uploads/super-muslo-512.png",
+  "imagen": "/assets/img/uploads/super-muslo-256.png",
   "imagen-thumb": "/assets/img/uploads/super-muslo-256.png",
   "title": "Combo Super Muslo",
   "menu-item-desc": "¿Con ganas de un muslo? ¡este el tu combo! incluye un muslo, una papa, una ensalada y dos panes.\n",
-  "menu-item-precio": "3.15",
+  "menu-item-precio": "3.25",
   "menu-item-parts": [
     {
       "menu-item-part-name": "1 muslo"
@@ -16,7 +16,7 @@
       "menu-item-part-name": "1 ensalada"
     },
     {
-      "menu-item-part-name": "2 panes"
+      "menu-item-part-name": "1 pan"
     }
   ]
 }
