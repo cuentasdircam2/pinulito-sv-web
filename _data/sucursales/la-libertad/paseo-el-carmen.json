@@ -81,7 +81,7 @@
       "horario-cierre-sabado-ampm-sucursal": "PM"
     },
     "horario-cierre-domingo-sucursal": {
-      "horario-cierre-domingo-hora-sucursal": "6",
+      "horario-cierre-domingo-hora-sucursal": "5",
       "horario-cierre-domingo-minutos-sucursal": "00",
       "horario-cierre-domingo-ampm-sucursal": "PM"
     }
