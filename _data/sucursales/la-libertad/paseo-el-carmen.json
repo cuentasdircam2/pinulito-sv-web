@@ -51,37 +51,37 @@
   },
   "horario-cierre-sucursal": {
     "horario-cierre-lunes-sucursal": {
-      "horario-cierre-lunes-hora-sucursal": "7",
-      "horario-cierre-lunes-minutos-sucursal": "00",
+      "horario-cierre-lunes-hora-sucursal": "6",
+      "horario-cierre-lunes-minutos-sucursal": "30",
       "horario-cierre-lunes-ampm-sucursal": "PM"
     },
     "horario-cierre-martes-sucursal": {
-      "horario-cierre-martes-hora-sucursal": "7",
-      "horario-cierre-martes-minutos-sucursal": "00",
+      "horario-cierre-martes-hora-sucursal": "6",
+      "horario-cierre-martes-minutos-sucursal": "30",
       "horario-cierre-martes-ampm-sucursal": "PM"
     },
     "horario-cierre-miercoles-sucursal": {
-      "horario-cierre-miercoles-hora-sucursal": "7",
-      "horario-cierre-miercoles-minutos-sucursal": "00",
+      "horario-cierre-miercoles-hora-sucursal": "6",
+      "horario-cierre-miercoles-minutos-sucursal": "30",
       "horario-cierre-miercoles-ampm-sucursal": "PM"
     },
     "horario-cierre-jueves-sucursal": {
-      "horario-cierre-jueves-hora-sucursal": "7",
-      "horario-cierre-jueves-minutos-sucursal": "00",
+      "horario-cierre-jueves-hora-sucursal": "6",
+      "horario-cierre-jueves-minutos-sucursal": "30",
       "horario-cierre-jueves-ampm-sucursal": "PM"
     },
     "horario-cierre-viernes-sucursal": {
-      "horario-cierre-viernes-hora-sucursal": "7",
-      "horario-cierre-viernes-minutos-sucursal": "00",
+      "horario-cierre-viernes-hora-sucursal": "6",
+      "horario-cierre-viernes-minutos-sucursal": "30",
       "horario-cierre-viernes-ampm-sucursal": "PM"
     },
     "horario-cierre-sabado-sucursal": {
-      "horario-cierre-sabado-hora-sucursal": "7",
-      "horario-cierre-sabado-minutos-sucursal": "00",
+      "horario-cierre-sabado-hora-sucursal": "6",
+      "horario-cierre-sabado-minutos-sucursal": "30",
       "horario-cierre-sabado-ampm-sucursal": "PM"
     },
     "horario-cierre-domingo-sucursal": {
-      "horario-cierre-domingo-hora-sucursal": "5",
+      "horario-cierre-domingo-hora-sucursal": "6",
       "horario-cierre-domingo-minutos-sucursal": "00",
       "horario-cierre-domingo-ampm-sucursal": "PM"
     }
